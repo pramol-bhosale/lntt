@@ -1,0 +1,37 @@
+.sidebar-tab{
+    border: 1px solid #ECECEF;
+    color: #45496E;
+    margin:0.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+ }
+
+.sidebar-tab:hover{
+       background-color: #797EA8;
+       color: white;
+}
+.sidebar-container{
+  border-right: 1px solid #CCCEFD;
+  background-color: #fff;
+}
+.sidebar-active, .sidebar-active:hover{
+    background-color: #45496E;
+    color: #ffffff;
+}
+.header-container{
+    border-bottom: 1px solid #CCCEFD;
+    color: #45496E;
+    background-color: #fff;
+}
+.header-container .back-icon, .header-container .setting-icon{
+    cursor: pointer;
+}
+.sidebar-tab-item{
+ border-bottom: 1px solid #CCCEFD;
+ padding: 10px 0;
+}
+.basetemplate-children-container{
+    background-color: #F5F5F5;
+}
