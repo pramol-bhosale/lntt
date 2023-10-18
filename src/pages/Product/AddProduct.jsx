@@ -1,4 +1,4 @@
-import { Cube } from '@phosphor-icons/react'
+import { ArrowClockwise, Cube, FloppyDisk } from '@phosphor-icons/react'
 import React from 'react'
 import Select from 'react-select'
 
@@ -20,7 +20,7 @@ function AddProduct() {
         <div className="row g-0">
             <div className="col-12 align-items-center">
                 <Cube size={30} weight="fill" /> <span className='addproduct-main-heading'>Add Product</span>
-                <div className="col-12 row g-0 mt-5">
+                <div className="col-12 row g-0 mt-4">
                     <div className="col-3">
                         <div className='form-label'>
                             Product Name*
@@ -109,7 +109,7 @@ function AddProduct() {
                         <input type="text" className="form-control" />
                     </div>
                 </div>
-                <dov className="col-12 row g-0 mt-4">
+                <div className="col-12 row g-0 mt-4">
                     <div className="col-3">
                         <div className='form-label'>
                             Select GST
@@ -128,7 +128,15 @@ function AddProduct() {
                             menuPlacement='top'
                         />
                     </div>
-                </dov>
+                </div>
+                <div className="col-12 row g-0 mt-3 justify-content-end">
+                    <div className="col-2 app-btn">
+                    <ArrowClockwise size={25} weight="fill" /> Reset
+                    </div>
+                    <div className="col-2 offset-1 app-btn">
+                    <FloppyDisk size={25} weight="fill" /> Save
+                    </div>
+                </div>
             </div>
         </div>
     )
