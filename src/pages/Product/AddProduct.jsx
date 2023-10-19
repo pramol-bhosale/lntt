@@ -1,8 +1,8 @@
 import { ArrowClockwise, Cube, FloppyDisk } from '@phosphor-icons/react'
-import React from 'react'
+import React, { useState } from 'react'
 import Select from 'react-select'
 
-function AddProduct() {
+function AddProduct({isUpdate}) {
     const unitList = [
         { label: 'Kilogram', value: 'kg' },
         { label: 'Liter', value: 'lt' }
@@ -16,10 +16,16 @@ function AddProduct() {
         { label: 'Yes', value: true },
         { label: 'No', value: false }
     ]
+    const [mainLabel, setMainLabel] = useState(isUpdate);
     return (
         <div className="row g-0">
             <div className="col-12 align-items-center">
-                <Cube size={30} weight="fill" /> <span className='addproduct-main-heading'>Add Product</span>
+                <Cube size={30} weight="fill" /> <span className='addproduct-main-heading'>
+                {
+                    mainLabel ? 'Update Product' : 'Add Product'
+                }
+
+                </span>
                 <div className="col-12 row g-0 mt-4">
                     <div className="col-3">
                         <div className='form-label'>

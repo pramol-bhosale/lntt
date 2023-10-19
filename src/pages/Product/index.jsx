@@ -3,7 +3,7 @@ import AddProduct from './AddProduct'
 import style from './style.css'
 function ProductPage() {
   return (
-    <AddProduct/>
+    <AddProduct isUpdate={true}/>
   )
 }
 

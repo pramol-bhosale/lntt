@@ -1,8 +1,18 @@
 @import url(https://db.onlinewebfonts.com/c/941f4a4b33c62f21dfdfbae776f7f3e0?family=Graphik+Regular+Regular);
-*{
+
+* {
   font-family: 'Graphik Regular Regular';
 }
-body{
+
+body {
   background-color: #F5F5F5;
   color: #45496E;
+}
+
+.bg-app {
+  background-color: #45496E;
+}
+
+.clr-white {
+  color: #fff;
 }
