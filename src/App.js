@@ -7,7 +7,7 @@ import SupplierPage from './pages/Supplier';
 
 function App() {
   return (
-      <SupplierPage isUpdate={false} />
+      <SupplierPage isUpdate={true} />
   //   <BrowserRouter>
   //   <Routes>
   //      <Route path='/product/add' Component={<ProductPage isUpdate={false}/>}/>

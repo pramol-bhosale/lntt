@@ -101,3 +101,13 @@
     border-radius: 0;
   }
 }
+.bg-primary-link{
+  color: #45496E;
+  text-decoration: none;
+  border-bottom: 2px solid #45496E;
+  background-image: linear-gradient();
+  transition: .5s;
+}
+.bg-primary-link:hover{
+  background-color: white;
+}

@@ -28,3 +28,8 @@ export const stateList = [
     { label: 'Uttarakhand', value: 'ut' },
     { label: 'West Bengal', value: 'wb' }
 ]
+
+
+export const DELETE_SUPPLIER_POPUP_CODE = "APPACTPD002";
+export const RESET_FORM_POPUP_CODE = "APPACTPR001";
+export const UPDATE_RECORD_POPUP_CODE = "APPACTPU001";
