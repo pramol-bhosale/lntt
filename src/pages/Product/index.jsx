@@ -1,9 +1,12 @@
 import React from 'react'
 import AddProduct from './AddProduct'
 import style from './style.css'
-function ProductPage() {
+import BaseTemplate from '../../Layout/BaseTemplate'
+function ProductPage({isUpdate}) {
   return (
-    <AddProduct isUpdate={true}/>
+    <BaseTemplate>
+    <AddProduct isUpdate={isUpdate}/>
+    </BaseTemplate>
   )
 }
 

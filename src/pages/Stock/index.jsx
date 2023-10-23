@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import style from './style.css'
 import { ChartDonut, MagnifyingGlass, Printer, Table } from '@phosphor-icons/react'
+import BaseTemplate from '../../Layout/BaseTemplate'
 function StockPage() {
     const [productList, setProductList] = useState([
         {name:'T-Shirt', stock:'20', purchaseRate:'350', saleRate:'450',discount:'5',barcode:'185647834', hsn:'HSN0973'},
@@ -9,6 +10,7 @@ function StockPage() {
         {name:'T-Shirt', stock:'20', purchaseRate:'350', saleRate:'450',discount:'5',barcode:'185647834', hsn:'HSN0973'}
     ])
     return (
+        <BaseTemplate>
         <div className="row g-0">
             <div className="col-12 align-items-center">
                 <div className="col-12 row g-0 align-items-center justify-content-between">
@@ -86,6 +88,7 @@ function StockPage() {
                 </div>
             </div>
         </div>
+        </BaseTemplate>
     )
 }
 
