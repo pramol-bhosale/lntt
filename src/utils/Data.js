@@ -1,7 +1,10 @@
+import { ChartLine, Cube, Truck, UserCircleGear, Users } from "@phosphor-icons/react";
+
 export const sideBarLinks = [
     {
         label: 'Product',
-        path:'/product',
+        path:'product',
+        icon: <Cube size={30} weight="fill" />,
         links: [
             { label: 'Add Product', href: '/product/add' },
             { label: 'Update Product', href: '/product/update' },
@@ -10,7 +13,8 @@ export const sideBarLinks = [
     },
     {
         label: 'Supplier',
-        path:'/supplier',
+        path:'supplier',
+        icon: <Truck size={30} weight="fill" />,
         links: [
             { label: 'Add Supplier', href: '/supplier/add' },
             { label: 'Update Supplier', href: '/supplier/update' },
@@ -24,7 +28,8 @@ export const sideBarLinks = [
     },
     {
         label: 'Employee',
-        path:'/employee',
+        path:'employee',
+        icon: <UserCircleGear size={30} weight="fill" />,
         links: [
             { label: 'Add Employee', href: '/employee/add' },
             { label: 'Update Employee', href: '/employee/update' },
@@ -35,7 +40,8 @@ export const sideBarLinks = [
     },
     {
         label: 'Customer',
-        path:'/customer',
+        path:'customer',
+        icon:<Users size={32} weight="fill" />,
         links: [
             { label: 'Add Customer', href: '/customer/add' },
             { label: 'Update Customer', href: '/customer/update' },
@@ -46,7 +52,8 @@ export const sideBarLinks = [
     },
     {
         label: 'Report',
-        path:'/report',
+        path:'report',
+        icon:<ChartLine size={32} weight="fill" />,
         links: [
             { label: 'Customer', href: '/report/customer' },
             { label: 'Supplier', href: '/report/supplier' },

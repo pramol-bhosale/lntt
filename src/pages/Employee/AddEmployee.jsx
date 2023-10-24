@@ -1,5 +1,5 @@
 import { ArrowClockwise, Broadcast, Cube, Fingerprint, FloppyDisk, Trash, UserCircleGear } from '@phosphor-icons/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Select from 'react-select';
 import { ACCESS_CONTROL_POPUP_CODE, DELETE_SUPPLIER_POPUP_CODE, EmployeeRole, RESET_FORM_POPUP_CODE, UPDATE_RECORD_POPUP_CODE, stateList } from '../../utils/Constants';
 import style from './style.css';
@@ -12,6 +12,9 @@ function AddEmployee({ isUpdate }) {
         name: 'Adidas',
         accountStatus: true
     });
+    useEffect(()=>{
+          setMainLabel(isUpdate)
+    },[isUpdate])
     return (
         <>
             <PopUp code={popupCode} />

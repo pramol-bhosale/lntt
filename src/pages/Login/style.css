@@ -1,0 +1,23 @@
+.login-container{
+    background-image: url('../../media/images/login-shop-dark.jpg');
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-size: cover;
+}
+.login-heading{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2rem;
+    border-bottom: 4px solid #1ebcec;
+}
+.login-child-container{
+    background-color: white;
+    /* opacity: 0.8; */
+}
+.login-btn{
+    border: none;
+    background-color: #1ebcec;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
+}

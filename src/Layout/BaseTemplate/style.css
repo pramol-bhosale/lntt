@@ -35,3 +35,6 @@
 .basetemplate-children-container{
     background-color: #f1f4f5;
 }
+.sidebar-links{
+    cursor: pointer;
+}

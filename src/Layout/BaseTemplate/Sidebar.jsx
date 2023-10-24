@@ -1,12 +1,17 @@
 import { Cube } from '@phosphor-icons/react'
 import React, { useEffect, useState } from 'react'
 import { sideBarLinks } from '../../utils/Data'
+import { useNavigate } from 'react-router-dom'
 
 function Sidebar() {
     const [pathName, setPathName] = useState("/")
     useEffect(()=>{
       setPathName(window.location.pathname.split("/")[1])
     },[])
+    const navigator = useNavigate()
+    const redirect =(path)=>{
+            navigator(path)
+    }
     return (
         <div className='row g-0 sidebar-container vh-100'>
             <div>
@@ -19,13 +24,13 @@ function Sidebar() {
                             return (
                                 <div className="btn-group dropend">
                                     <button type="button" className={`col-10 sidebar-tab dropdown-toggle ${pathName === element.path ? 'sidebar-active' : ''}`} data-bs-toggle="dropdown" aria-expanded="false">
-                                        {element.label}
+                                      {element.icon}  {element.label}
                                     </button>
                                     <ul className="dropdown-menu">
                                         {
                                             element.links.map(link => {
                                                 return (
-                                                    <li><a className="dropdown-item" href={link.href}>{link.label}</a></li>
+                                                    <li className='dropdown-item sidebar-links' onClick={()=>{redirect(link.href)}}>{link.label}</li>
                                                 )
                                             })
                                         }
