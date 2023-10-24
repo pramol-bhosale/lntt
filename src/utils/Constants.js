@@ -29,7 +29,13 @@ export const stateList = [
     { label: 'West Bengal', value: 'wb' }
 ]
 
+export const EmployeeRole = [
+    { label: 'Admin', value: 'admin' },
+    { label: 'Receipt', value: 'receipt' }
+]
 
 export const DELETE_SUPPLIER_POPUP_CODE = "APPACTPD002";
 export const RESET_FORM_POPUP_CODE = "APPACTPR001";
 export const UPDATE_RECORD_POPUP_CODE = "APPACTPU001";
+export const ACCESS_CONTROL_POPUP_CODE = "APPACTPA001";
+

@@ -1,3 +1,4 @@
+import AccessTable from "../../pages/Employee/AccessTable"
 
 export const deleteSupplierModal = {
     header: 'Warning: Deleting Supplier',
@@ -41,9 +42,20 @@ export const updateData = {
     classNames: 'modal-lg'
 }
 
+export const accessControlData = {
+    header: 'Grant User Access',
+    body: <AccessTable/>,
+    CTAButtons : {
+        name:'Grant Access',
+        classNames:'btn btn-primary'
+    },
+    classNames: 'modal-lg'
+}
+
 export const modalMap = [
     {code : 'APPACTPD002', data:deleteSupplierModal},
     {code : 'APPACTPR001', data:resetData},
     {code : 'APPACTPU001', data:updateData},
+    {code : 'APPACTPA001', data:accessControlData},
    ]
    

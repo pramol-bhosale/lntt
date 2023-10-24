@@ -1,4 +1,4 @@
-import { ArrowClockwise, Broadcast, Cube, FloppyDisk, Trash } from '@phosphor-icons/react'
+import { ArrowClockwise, Broadcast, Cube, FloppyDisk, Trash, Truck } from '@phosphor-icons/react'
 import React, { useState } from 'react'
 import Select from 'react-select';
 import { DELETE_SUPPLIER_POPUP_CODE, RESET_FORM_POPUP_CODE, UPDATE_RECORD_POPUP_CODE, stateList } from '../../utils/Constants';
@@ -17,7 +17,7 @@ function AddSupplier({ isUpdate = true }) {
         <PopUp code={popupCode}/>
             <div className="row g-0">
                 <div className="col-12 align-items-center">
-                    <Cube size={30} weight="fill" /> <span className='addSupplier-main-heading'>
+                <Truck size={30} weight="fill" /> <span className='addSupplier-main-heading'>
                         {
                             mainLabel ? 'Update Supplier Information' : 'Add Supplier Information'
                         }
