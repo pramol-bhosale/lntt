@@ -1,5 +1,5 @@
 import { ArrowClockwise, Broadcast, Cube, FloppyDisk, Trash, Users } from '@phosphor-icons/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Select from 'react-select';
 import { DELETE_SUPPLIER_POPUP_CODE, RESET_FORM_POPUP_CODE, UPDATE_RECORD_POPUP_CODE, stateList } from '../../utils/Constants';
 import style from './style.css';
@@ -12,6 +12,9 @@ function AddCustomer({isUpdate}) {
         name: 'Adidas',
         accountStatus: true
     });
+    useEffect(()=>{
+        setMainLabel(isUpdate)
+   },[isUpdate])
   return (
     <>
     <PopUp code={popupCode}/>

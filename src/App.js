@@ -8,6 +8,8 @@ import CustomerPage from './pages/Customer';
 import EmployeePage from './pages/Employee';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './pages/Login';
+import ForgotPassword from './pages/Login/ForgotPassword';
+import SettingPage from './pages/Setting';
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <Routes>
         <Route path='/'>
           <Route path='login' element={<Login/>} />
+          <Route path='forgot-password' element={<ForgotPassword/>} />
+          <Route path='setting' element={<SettingPage/>} />
           <Route path='product/add' element={<ProductPage isUpdate={false} />} />
           <Route path='product/update' element={<ProductPage isUpdate={true} />} />
           <Route path='product/stock' element={<StockPage />} />

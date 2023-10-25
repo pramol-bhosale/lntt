@@ -1,7 +1,9 @@
 import { ArrowCircleLeft, Cube, GearSix } from '@phosphor-icons/react'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Header() {
+  const navigate = useNavigate()
   return (
     <div className='row g-0 header-container'>
        <div className='col-12 row g-0 py-2 align-items-center'>
@@ -13,7 +15,7 @@ function Header() {
           </div>
           <div className="col-9 row g-0 justify-content-end">
             <div className="col-1 setting-icon" title='Setting'>
-            <GearSix size={32} weight="fill" />
+            <GearSix size={32} weight="fill"  onClick={()=>{navigate("/setting")}}/>
             </div>
           </div>
        </div>

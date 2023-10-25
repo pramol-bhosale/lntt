@@ -1,6 +1,8 @@
-import { ArrowClockwise, Cube, FloppyDisk } from '@phosphor-icons/react'
-import React, { useState } from 'react'
+import { ArrowClockwise, Cube, FloppyDisk, Trash } from '@phosphor-icons/react'
+import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
+import PopUp from '../../components/Modal'
+import { DELETE_SUPPLIER_POPUP_CODE, RESET_FORM_POPUP_CODE, UPDATE_RECORD_POPUP_CODE } from '../../utils/Constants'
 
 function AddProduct({isUpdate}) {
     const unitList = [
@@ -17,7 +19,13 @@ function AddProduct({isUpdate}) {
         { label: 'No', value: false }
     ]
     const [mainLabel, setMainLabel] = useState(isUpdate);
+    const [popupCode, setPopupCode] = useState()
+    useEffect(()=>{
+         setMainLabel(isUpdate)
+    },[isUpdate])
     return (
+        <>
+        <PopUp code={popupCode}/>
         <div className="row g-0">
             <div className="col-12 align-items-center">
                 <Cube size={30} weight="fill" /> <span className='addproduct-main-heading'>
@@ -135,16 +143,24 @@ function AddProduct({isUpdate}) {
                         />
                     </div>
                 </div>
-                <div className="col-12 row g-0 mt-3 justify-content-end">
-                    <div className="col-2 app-btn">
-                    <ArrowClockwise size={25} weight="fill" /> Reset
+                <div className="col-12 row g-0 mt-5 justify-content-end">
+                        <div className="col-1 app-btn" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={()=>{setPopupCode(RESET_FORM_POPUP_CODE)}}>
+                            <ArrowClockwise size={25} weight="fill" /> Reset
+                        </div>
+                        {
+                            isUpdate ? (
+                                <div className="offset-1 col-1 app-btn" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={()=>{setPopupCode(DELETE_SUPPLIER_POPUP_CODE)}}>
+                                    <Trash size={25} weight="fill" /> Delete
+                                </div>
+                            ) : null
+                        }
+                        <div className="col-1 offset-1 app-btn" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={()=>{setPopupCode(UPDATE_RECORD_POPUP_CODE)}}>
+                            <FloppyDisk size={25} weight="fill" /> Save
+                        </div>
                     </div>
-                    <div className="col-2 offset-1 app-btn">
-                    <FloppyDisk size={25} weight="fill" /> Save
-                    </div>
-                </div>
             </div>
         </div>
+        </>
     )
 }
 
