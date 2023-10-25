@@ -5,7 +5,7 @@ import style from './style.css';
 
 function BaseTemplate({children}) {
   return (
-    <div className='row g-0 '>
+    <div className='row g-0 basetemplate-container'>
         <div className="col-2">
             <Sidebar/>
         </div>
