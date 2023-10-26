@@ -4,6 +4,7 @@ import Select from 'react-select';
 import { DELETE_SUPPLIER_POPUP_CODE, RESET_FORM_POPUP_CODE, UPDATE_RECORD_POPUP_CODE, stateList } from '../../utils/Constants';
 import style from './style.css';
 import PopUp from '../../components/Modal';
+import { SupplierType } from '../../utils/Data';
 
 function AddSupplier({ isUpdate = true }) {
     const [mainLabel, setMainLabel] = useState(isUpdate);
@@ -87,7 +88,7 @@ function AddSupplier({ isUpdate = true }) {
                                 Supplier Type
                             </div>
                             <Select
-                                options={stateList} />
+                                options={SupplierType} />
                         </div>
                         <div className="offset-1 col-3">
 

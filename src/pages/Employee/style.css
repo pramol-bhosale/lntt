@@ -119,3 +119,18 @@
 .bg-primary-link:hover{
   background-color: white;
 }
+.access-table-tab{
+  border-radius: 5px 5px 0 0;
+  border:2px solid #CCCEFD;
+  border-bottom: none;
+  text-align: center;
+  cursor: pointer;
+}
+.access-table-container{
+  border: 1px solid #dee2e6;
+  border-top: none;
+  background-color: #F1F3FC;
+}
+.access-table-active-tab{
+  background-color: #F1F3FC;
+}

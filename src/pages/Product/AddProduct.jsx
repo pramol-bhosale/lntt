@@ -3,12 +3,9 @@ import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
 import PopUp from '../../components/Modal'
 import { DELETE_SUPPLIER_POPUP_CODE, RESET_FORM_POPUP_CODE, UPDATE_RECORD_POPUP_CODE } from '../../utils/Constants'
+import { ProductUnitList } from '../../utils/Data'
 
 function AddProduct({isUpdate}) {
-    const unitList = [
-        { label: 'Kilogram', value: 'kg' },
-        { label: 'Liter', value: 'lt' }
-    ]
     const GSTList = [
         { label: '5%', value: '5' },
         { label: '10%', value: '10' },
@@ -46,7 +43,7 @@ function AddProduct({isUpdate}) {
                             Unit
                         </div>
                         <Select
-                            options={unitList}
+                            options={ProductUnitList}
                         />
                     </div>
                     <div className="offset-1 col-3">

@@ -1,9 +1,10 @@
 import { ArrowClockwise, Broadcast, Cube, Fingerprint, FloppyDisk, Trash, UserCircleGear } from '@phosphor-icons/react'
 import React, { useEffect, useState } from 'react'
 import Select from 'react-select';
-import { ACCESS_CONTROL_POPUP_CODE, DELETE_SUPPLIER_POPUP_CODE, EmployeeRole, RESET_FORM_POPUP_CODE, UPDATE_RECORD_POPUP_CODE, stateList } from '../../utils/Constants';
+import { ACCESS_CONTROL_POPUP_CODE, DELETE_SUPPLIER_POPUP_CODE, RESET_FORM_POPUP_CODE, UPDATE_RECORD_POPUP_CODE, stateList } from '../../utils/Constants';
 import style from './style.css';
 import PopUp from '../../components/Modal';
+import { EmployeeRoles } from '../../utils/Data';
 
 function AddEmployee({ isUpdate }) {
     const [mainLabel, setMainLabel] = useState(isUpdate);
@@ -136,7 +137,7 @@ function AddEmployee({ isUpdate }) {
                                 Role
                             </div>
                             <Select
-                                options={EmployeeRole} />
+                                options={EmployeeRoles} />
                         </div>
                     </div>
                     <div className="col-12 row g-0 mt-5 justify-content-end">
