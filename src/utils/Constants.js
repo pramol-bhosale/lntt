@@ -34,8 +34,9 @@ export const EmployeeRole = [
     { label: 'Receipt', value: 'receipt' }
 ]
 
-export const DELETE_SUPPLIER_POPUP_CODE = "APPACTPD002";
-export const RESET_FORM_POPUP_CODE = "APPACTPR001";
-export const UPDATE_RECORD_POPUP_CODE = "APPACTPU001";
-export const ACCESS_CONTROL_POPUP_CODE = "APPACTPA001";
+export const DELETE_SUPPLIER_POPUP_CODE = "POPUP001";
+export const RESET_FORM_POPUP_CODE = "POPUP002";
+export const UPDATE_RECORD_POPUP_CODE = "POPUP003";
+export const ACCESS_CONTROL_POPUP_CODE = "POPUP004";
+export const TABLE_LAYOUT_POPUP_CODE = "POPUP005";
 

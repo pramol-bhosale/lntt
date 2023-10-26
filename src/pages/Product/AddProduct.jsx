@@ -19,7 +19,7 @@ function AddProduct({isUpdate}) {
         { label: 'No', value: false }
     ]
     const [mainLabel, setMainLabel] = useState(isUpdate);
-    const [popupCode, setPopupCode] = useState()
+    const [popupCode, setPopupCode] = useState(RESET_FORM_POPUP_CODE)
     useEffect(()=>{
          setMainLabel(isUpdate)
     },[isUpdate])

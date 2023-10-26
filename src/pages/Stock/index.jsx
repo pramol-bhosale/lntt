@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import style from './style.css'
 import { ChartDonut, MagnifyingGlass, Printer, Table } from '@phosphor-icons/react'
 import BaseTemplate from '../../Layout/BaseTemplate'
+import PopUp from '../../components/Modal'
+import { TABLE_LAYOUT_POPUP_CODE } from '../../utils/Constants'
 function StockPage() {
     const [productList, setProductList] = useState([
         {name:'T-Shirt', stock:'20', purchaseRate:'350', saleRate:'450',discount:'5',barcode:'185647834', hsn:'HSN0973'},
@@ -9,8 +11,11 @@ function StockPage() {
         {name:'T-Shirt', stock:'20', purchaseRate:'350', saleRate:'450',discount:'5',barcode:'185647834', hsn:'HSN0973'},
         {name:'T-Shirt', stock:'20', purchaseRate:'350', saleRate:'450',discount:'5',barcode:'185647834', hsn:'HSN0973'}
     ])
+    const [popupCode, setPopupCode] = useState(TABLE_LAYOUT_POPUP_CODE)
     return (
         <BaseTemplate>
+        <>
+        <PopUp code={popupCode}/>
         <div className="row g-0">
             <div className="col-12 align-items-center">
                 <div className="col-12 row g-0 align-items-center justify-content-between">
@@ -23,7 +28,9 @@ function StockPage() {
                         </span>
                     </div>
                     <div className="col-2 text-end">
-                        <Table size={32} weight="fill" />
+                        <button className='app-btn d-inline' data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={(e)=>{setPopupCode(TABLE_LAYOUT_POPUP_CODE);}}>
+                        <Table size={32} weight="fill"/>
+                        </button>   
                         <button className="app-btn d-inline ms-2">
                         <Printer size={22} weight="fill" /> Print
                         </button>
@@ -88,6 +95,7 @@ function StockPage() {
                 </div>
             </div>
         </div>
+        </>
         </BaseTemplate>
     )
 }

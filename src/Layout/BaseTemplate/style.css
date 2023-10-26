@@ -27,7 +27,8 @@ body.dark {
 .sidebar-container{
   border-right: 1px solid #CCCEFD;
   background-color: #fff;
-  height: 100%;
+  position: fixed;
+  /* height: 100%; */
 }
 .sidebar-active, .sidebar-active:hover{
     /* background-color: #45496E; */
@@ -38,6 +39,7 @@ body.dark {
     border-bottom: 1px solid #CCCEFD;
     color: #45496E;
     background-color: #fff;
+    position: fixed;
 }
 .header-container .back-icon, .header-container .setting-icon{
     cursor: pointer;

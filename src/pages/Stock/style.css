@@ -1,6 +1,6 @@
 .stock-label {
     font-weight: bolder;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
 }
 
 .stock-table thead tr {
@@ -9,4 +9,17 @@
 .stock-table tr th{
     background-color: #45496E;
     color: white;
+}
+.app-table{
+    overflow-y: scroll;
+    /* height: 200px; */
+}
+.app-table th{
+  background-color: #45496E;
+  color: white;
+}
+.stock-table-popup-container{
+    height:300px;
+    overflow-y: scroll;
+
 }

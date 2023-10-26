@@ -7,7 +7,7 @@ import PopUp from '../../components/Modal';
 
 function AddCustomer({isUpdate}) {
     const [mainLabel, setMainLabel] = useState(isUpdate);
-    const [popupCode, setPopupCode] = useState()
+    const [popupCode, setPopupCode] = useState(RESET_FORM_POPUP_CODE)
     const [supplierData, setSupplierData] = useState({
         name: 'Adidas',
         accountStatus: true

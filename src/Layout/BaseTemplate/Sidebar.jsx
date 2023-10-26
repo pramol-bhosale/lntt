@@ -13,7 +13,8 @@ function Sidebar() {
         navigator(path)
     }
     return (
-        <div className='row g-0 sidebar-container'>
+        <div className='col-2 sidebar-container vh-100'>
+            <div className='row g-0'>
             <div>
                 <div className="row g-0 py-3">
                     <div className="col-10 text-center py-3">
@@ -87,6 +88,7 @@ function Sidebar() {
                         </ul>
                     </div> */}
                 </div>
+            </div>
             </div>
         </div>
     )

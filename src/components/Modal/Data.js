@@ -1,4 +1,6 @@
 import AccessTable from "../../pages/Employee/AccessTable"
+import TableLayoutPopup from "../../pages/Stock/TableLayoutPopup"
+import { ACCESS_CONTROL_POPUP_CODE, DELETE_SUPPLIER_POPUP_CODE, RESET_FORM_POPUP_CODE, TABLE_LAYOUT_POPUP_CODE, UPDATE_RECORD_POPUP_CODE } from "../../utils/Constants"
 
 export const deleteSupplierModal = {
     header: 'Warning: Deleting Supplier',
@@ -52,10 +54,21 @@ export const accessControlData = {
     classNames: 'modal-lg'
 }
 
+export const TableLayoutData = {
+    header: 'Select Columns to Display',
+    body: <TableLayoutPopup/>,
+    CTAButtons : {
+        name:'Apply',
+        classNames:'btn btn-primary'
+    },
+    classNames: 'modal-lg'
+}
+
 export const modalMap = [
-    {code : 'APPACTPD002', data:deleteSupplierModal},
-    {code : 'APPACTPR001', data:resetData},
-    {code : 'APPACTPU001', data:updateData},
-    {code : 'APPACTPA001', data:accessControlData},
+    {code : DELETE_SUPPLIER_POPUP_CODE, data:deleteSupplierModal},
+    {code : RESET_FORM_POPUP_CODE, data:resetData},
+    {code : UPDATE_RECORD_POPUP_CODE, data:updateData},
+    {code : ACCESS_CONTROL_POPUP_CODE, data:accessControlData},
+    {code : TABLE_LAYOUT_POPUP_CODE, data:TableLayoutData},
    ]
    

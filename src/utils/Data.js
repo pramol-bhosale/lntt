@@ -62,3 +62,19 @@ export const sideBarLinks = [
         ]
     }
 ]
+
+export const StockTableColumns=[
+    { label:'Product Name'},
+    { label:'Unit'},
+    { label:'HSN'},
+    { label:'Purchase Rate'},
+    { label:'M.R.P'},
+    { label:'Margin%'},
+    { label:'Sale rate'},
+    { label:'Wholesale Margin%'},
+    { label:'Wholesale Rate'},
+    { label:'Stock'},
+    { label:'Discount%'},
+    { label:'GST'},
+    { label:'Barcode'}
+]
