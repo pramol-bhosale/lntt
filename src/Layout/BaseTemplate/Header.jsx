@@ -5,18 +5,18 @@ import { useNavigate } from 'react-router-dom'
 function Header() {
   const navigate = useNavigate()
   return (
-    <div className='col-10 header-container'>
+    <div className='col-10 header-container py-2'>
        <div className="row g-0">
        <div className='col-12 row g-0 py-2 align-items-center'>
           <div className="col-1 ps-3 back-icon" title='Back'>
-          <ArrowCircleLeft size={32} weight="fill" onClick={()=>{window.history.back()}} />
+          <ArrowCircleLeft size={32} onClick={()=>{window.history.back()}} />
           </div>
           <div className="col-2">
           <Cube size={22} weight="fill" /> Master
           </div>
           <div className="col-9 row g-0 justify-content-end">
             <div className="col-1 setting-icon" title='Setting'>
-            <GearSix size={32} weight="fill"  onClick={()=>{navigate("/setting")}}/>
+            <GearSix size={32}  onClick={()=>{navigate("/setting")}}/>
             </div>
           </div>
        </div>

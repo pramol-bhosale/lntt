@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #f1f4f5;
+  background-color: #f5f6f8;
   color: #45496E;
 }
 
@@ -15,4 +15,7 @@ body {
 
 .clr-white {
   color: #fff;
+}
+.portal-shadow-container{
+  box-shadow: 0 3px 5px rgba(15,34,58,.12);
 }
