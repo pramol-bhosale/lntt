@@ -11,6 +11,10 @@ import Login from './pages/Login';
 import ForgotPassword from './pages/Login/ForgotPassword';
 import SettingPage from './pages/Setting';
 
+//theme
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import ProductHome from './pages/Product/Home';
+        
 function App() {
   return (
     // <EmployeePage isUpdate={true} />
@@ -20,6 +24,7 @@ function App() {
           <Route path='login' element={<Login/>} />
           <Route path='forgot-password' element={<ForgotPassword/>} />
           <Route path='setting' element={<SettingPage/>} />
+          <Route path='product' element={<ProductHome/>} />
           <Route path='product/add' element={<ProductPage isUpdate={false} />} />
           <Route path='product/update' element={<ProductPage isUpdate={true} />} />
           <Route path='product/stock' element={<StockPage />} />

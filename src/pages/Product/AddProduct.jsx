@@ -25,12 +25,19 @@ function AddProduct({ isUpdate }) {
             <PopUp code={popupCode} />
             <div className="row g-0">
                 <div className="col-12 align-items-center">
+                    <div className="col-12 row g-0 justify-content-between">
+                    <div className="col-6">
                     <Cube size={30} weight="fill" /> <span className='addproduct-main-heading'>
                         {
                             mainLabel ? 'Update Product' : 'Add Product'
                         }
 
                     </span>
+                    </div>
+                    <div className="col-2 text-end">
+                        {window.location.pathname}
+                    </div>
+                    </div>
                     <div className="col-12 row g-0 bg-white p-4 my-4 rounded-2 portal-shadow-container">
                     <div className="col-12 row g-0 mt-4">
                         <div className="col-3">

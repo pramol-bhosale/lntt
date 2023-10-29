@@ -18,4 +18,21 @@ body {
 }
 .portal-shadow-container{
   box-shadow: 0 3px 5px rgba(15,34,58,.12);
+  color: #2b2e3b;
+}
+.app-icon{
+  cursor: pointer;
+}
+.app-input{
+  border: 1px solid #e2e2e2;
+  border-radius:3px;
+}
+.app-input:focus{
+   outline: 1px solid #9cadfa;
+}
+.app-green-clr{
+  color: #34c38f;
+}
+ul{
+  padding-left: 0;
 }

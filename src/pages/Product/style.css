@@ -15,3 +15,16 @@
     border-radius: 5px;
     cursor: pointer;
 }
+.product-meta-data{
+    font-size: 14px;
+}
+
+.product-item-list{
+    list-style-type: none;
+}
+.product-item-list li{
+  padding: 10px;
+}
+.product-item-list li:hover{
+    background-color: #e9ecef;
+}
