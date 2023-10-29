@@ -190,3 +190,12 @@ export const AccessTableModMap = [
     { label: "50", value: "50" },
     { label: "100", value: "100" },
   ]
+
+  export const ReportDurationList=[
+    { label: 'All Sale Invoice', value: '0' },
+    { label: 'This Month', value: '2' },
+    { label: 'Last Month', value: '3' },
+    { label: 'This Quarter', value: '4' },
+    { label: 'This Year', value: '5' },
+    { label: 'Custom', value: '1' }
+]

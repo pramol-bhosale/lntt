@@ -28,3 +28,11 @@
 .product-item-list li:hover{
     background-color: #e9ecef;
 }
+.sidebar-link-parent-container{
+    transition: display .5s ease;
+}
+.dot-dropdown{
+    display: relative;
+    top: 100px;
+    right: 30px;
+}

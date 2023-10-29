@@ -36,3 +36,19 @@ body {
 ul{
   padding-left: 0;
 }
+.data-export-excel-icon{
+  width: 30px;
+  height: 30px;
+}
+/* .paid-container{
+  background-color: #BEF180;
+}
+.unpaid-container{
+  background-color: #96E7FB;
+}
+.overdue-container{
+  background-color: #FEEC98;
+}
+.total-container{
+  background-color: #1B7BF9;
+} */

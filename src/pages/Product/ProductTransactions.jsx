@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Select from 'react-select';
 import { EntryiCountList } from '../../utils/Data';
-
+import ExcelIcon from './../../media/images/excel-icon.png'
 function ProductTransactions() {
   const [productList, setProductList] = useState([
     { name: 'T-Shirt', stock: '20', purchaseRate: '350', saleRate: '450', discount: '5', barcode: '185647834', hsn: 'HSN0973' },
@@ -11,7 +11,14 @@ function ProductTransactions() {
   ])
   return (
     <div className="col-12 card mt-3 p-3">
-      <h5>Transactions</h5>
+      <div className="row g-0 justify-content-between">
+         <h5 className="col-6">
+          Transactions
+         </h5>
+         <span className='col-1'>
+          <img src={ExcelIcon} alt="" className='data-export-excel-icon app-icon' />
+         </span>
+      </div>
       <div className="col-12 row g-0 justify-content-between">
         <div className="col-7 row g-0 align-items-center mt-3">
           <div className="col-2">

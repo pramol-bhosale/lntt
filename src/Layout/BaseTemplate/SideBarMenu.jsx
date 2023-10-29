@@ -17,9 +17,9 @@ function SideBarMenu({ data }) {
                     <div className="col-1">
                         {data.icon}
                     </div>
-                    <div className="col-8">
+                    <Link to={`/${data.path}`} className="col-8 sidebar-tab-link">
                         {data.label}
-                    </div>
+                    </Link>
                     <div className="col-1">
                         {
                             isOpen ? <CaretDown fontSize={15} /> : <CaretRight fontSize={15} />
@@ -29,7 +29,7 @@ function SideBarMenu({ data }) {
             </button>
             {
                 isOpen ? (
-                    <div className="col-12 row g-0 py-2">
+                    <div className="col-12 row g-0 py-2 sidebar-link-parent-container">
                         {
                             data.links.map(sublinks => {
                                 return (

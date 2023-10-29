@@ -6,7 +6,10 @@ body.dark {
   --toggle-color: #fff;
   --text-color: #ccc;
 }
-
+.sidebar-tab-link{
+    text-decoration: none;
+    color: #707070;
+}
 .sidebar-tab{
     color: #707070;
     cursor: pointer;
@@ -27,6 +30,12 @@ body.dark {
 .sidebar-active, .sidebar-active:hover{
    background-color: #695cfe;
    color: #fff;
+}
+.sidebar-active .sidebar-tab-link{
+    color: #fff;
+}
+.sidebar-tab:hover .sidebar-tab-link{
+    color: #fff;
 }
 .header-container{
     border-bottom: 1px solid #CCCEFD;
