@@ -55,10 +55,46 @@ export const sideBarLinks = [
         path: 'report',
         icon: <ChartLine size={32} weight="fill" />,
         links: [
-            { label: 'Customer', href: '/report/customer' },
-            { label: 'Supplier', href: '/report/supplier' },
-            { label: 'Daily Purchase/Sales ', href: '/report/daily-sales' },
-            { label: 'Inventory', href: '/report/inventory' },
+            { label: 'Sale', href: '/report/sale' },
+            { label: 'Purchase', href: '/report/purchase' },
+            { label: 'Day Book', href: '/report/day-book' },
+            { label: 'All Transactions', href: '/report/all' },
+            { label: 'Profit And Loss', href: '/report/profit-loss' },
+            { label: 'Bill Wise Profit', href: '/report/all' },
+            { label: 'Cash Flow', href: '/report/cash-flow' },
+            { label: 'Sale Aging', href: '/report/sale-aging' },
+            { label: 'Balance Sheet', href: '/report/balance-sheet' },
+            { label: 'Party Statement', href: '/report/party-statement' },
+            { label: 'Party Wise Profit and Loss', href: '/report/party-wise-profit-loss' },
+            { label: 'All Parties', href: '/report/all-parties' },
+            { label: 'Party Report by Item', href: '/report/party-report-by-item' },
+            { label: 'Sale Purchase by Party', href: '/report/sale-purchase-by-party' },
+            { label: 'GSTR 1', href: '/report/gstr-1' },
+            { label: 'GSTR 2', href: '/report/gstr-2' },
+            { label: 'GSTR 3B', href: '/report/gstr-3b' },
+            { label: 'GSTR 9', href: '/report/gstr-9' },
+            { label: 'Stock Summary', href: '/report/stock-summary' },
+            { label: 'Item Serial Report', href: '/report/item-serial-report' },
+            { label: 'Item Batch Report', href: '/report/item-batch-report' },
+            { label: 'Item Report by Party', href: '/report/item-report-by-party' },
+            { label: 'Item Wise Profit and Loss', href: '/report/item-wise-profit-loss' },
+            { label: 'Low Stock Summary', href: '/report/low-stock-summary' },
+            { label: 'Stock Details', href: '/report/stock-details' },
+            { label: 'Item Details', href: '/report/item-details' },
+            { label: 'Sale/Purchase Report by Item Category', href: '/report/sale-purchase-by-item-category' },
+            { label: 'Stock Summary Report by Item Category', href: '/report/stock-summary-by-item-category' },
+            { label: 'Item Wise Discount', href: '/report/item-wise-discount' },
+            { label: 'Bank Statement', href: '/report/bank-statement' },
+            { label: 'Discount Report', href: '/report/discount-report' },
+            { label: 'GST Report', href: '/report/gst-report' },
+            { label: 'GST Rate Report', href: '/report/gst-rate-report' },
+            { label: 'Form No. 27EQ', href: '/report/form-no-27eq' },
+            { label: 'TCS Receivable', href: '/report/tcs-receivable' },
+            { label: 'Expense', href: '/report/expense' },
+            { label: 'Expense Category Report', href: '/report/expense-category-report' },
+            { label: 'Expense Item Report', href: '/report/expense-item-report' },
+            { label: 'Sale/Purchase Orders', href: '/report/sale-purchase-orders' },
+            { label: 'Sale Purchase Order Item', href: '/report/sale-purchase-order-item' }
         ]
     }
 ]
@@ -183,5 +219,26 @@ export const AccessTableModMap = [
     { label: "Customer", accessor: "CustomerModule" },
     { label: "Report", accessor: "ReportModule" },
     { label: "Employee", accessor: "EmployeeModule" },
-  ];
-  
+];
+
+export const EntryiCountList = [
+    { label: "25", value: "25" },
+    { label: "50", value: "50" },
+    { label: "100", value: "100" },
+]
+
+export const ReportDurationList = [
+    { label: 'All Sale Invoice', value: '0' },
+    { label: 'This Month', value: '2' },
+    { label: 'Last Month', value: '3' },
+    { label: 'This Quarter', value: '4' },
+    { label: 'This Year', value: '5' },
+    { label: 'Custom', value: '1' }
+]
+
+export const ReportFilter = [
+    { label: 'Daily', value: '0' },
+    { label: 'Weekly', value: '1' },
+    { label: 'Monthly', value: '2' },
+    { label: 'Yearly', value: '3' },
+]

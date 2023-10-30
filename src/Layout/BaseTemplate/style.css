@@ -6,52 +6,70 @@ body.dark {
   --toggle-color: #fff;
   --text-color: #ccc;
 }
-
-.sidebar-tab{
-    border: 1px solid #ECECEF;
-    color: #45496E;
-    margin:0.5rem;
-    padding: 1rem;
-    border-radius: 10px;
-    text-align: center;
-    cursor: pointer;
-    background-image: linear-gradient(to right, #fff 50%, #45496e 50%);
-    background-size: 200% 100%;
-    transition: background-position 0.7s;
- }
-
-.sidebar-tab:hover{
-       background-position: -100% 0;
-       color: white;
+.sidebar-tab-link{
+    text-decoration: none;
+    color: #707070;
 }
+.sidebar-tab{
+    color: #707070;
+    cursor: pointer;
+    border: none;
+    padding: 15px 10px;
+    background-color: #fff;
+ }
 .sidebar-container{
   border-right: 1px solid #CCCEFD;
-  background-color: #fff;
+  background-color:#fff;
   position: fixed;
-  /* height: 100%; */
+  overflow-y: scroll;
+}
+.sidebar-tab:hover{
+   background-color: #695cfe;
+    color: #fff;
 }
 .sidebar-active, .sidebar-active:hover{
-    /* background-color: #45496E; */
-    background-position: -100% 0;
-    color: #ffffff;
+   background-color: #695cfe;
+   color: #fff;
+}
+.sidebar-active .sidebar-tab-link{
+    color: #fff;
+}
+.sidebar-tab:hover .sidebar-tab-link{
+    color: #fff;
 }
 .header-container{
     border-bottom: 1px solid #CCCEFD;
     color: #45496E;
     background-color: #fff;
     position: fixed;
+    box-shadow: 0 2px 4px rgba(15,34,58,.12);
+    z-index: 1;
 }
 .header-container .back-icon, .header-container .setting-icon{
     cursor: pointer;
+    color: #555b6d;
 }
 .sidebar-tab-item{
  border-bottom: 1px solid #CCCEFD;
  padding: 10px 0;
 }
 .basetemplate-children-container{
-    background-color: #f1f4f5;
-    /* height: %; */
+    background-color: #f5f6f8;
 }
 .sidebar-links{
     cursor: pointer;
+    text-decoration: none;
+    color: #707070;
 }
+.sidebar-link-container{
+    cursor: pointer;
+}
+.sidebar-link-container:hover{
+    background-color: #ececec;
+}
+.basetemplate-children-footer{
+    box-shadow: 0 0 4px rgba(15,34,58,.12);
+}
+::-webkit-scrollbar {
+    width: 2px;
+  }

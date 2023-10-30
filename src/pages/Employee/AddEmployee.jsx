@@ -115,19 +115,22 @@ function AddEmployee({ isUpdate }) {
                                         <div className='form-label'>
                                             Username
                                         </div>
+                                        <div className="input-group">
+                                        <div className="input-group-text">@</div>
                                         <input type="text" className="form-control" />
+                                        </div>
                                     </div>
                                     <div className="offset-1 col-3">
                                         <div className='form-label'>
                                             Password
                                         </div>
-                                        <input type="text" className="form-control" />
+                                        <input type="password" className="form-control" />
                                     </div>
                                     <div className="offset-1 col-3">
                                         <div className='form-label'>
                                             Confirm  Password
                                         </div>
-                                        <input type="text" className="form-control" />
+                                        <input type="password" className="form-control" />
                                     </div>
                                 </div>
                             </fieldset>
@@ -141,18 +144,20 @@ function AddEmployee({ isUpdate }) {
                         </div>
                     </div>
                     <div className="col-12 row g-0 mt-5 justify-content-end">
-                        <div className="col-1 app-btn" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={() => { setPopupCode(RESET_FORM_POPUP_CODE) }}>
-                            <ArrowClockwise size={25} weight="fill" /> Reset
-                        </div>
-                        {
-                            isUpdate ? (
-                                <div className="offset-1 col-1 app-btn" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={() => { setPopupCode(DELETE_SUPPLIER_POPUP_CODE) }}>
-                                    <Trash size={25} weight="fill" /> Delete
-                                </div>
-                            ) : null
-                        }
-                        <div className="col-1 offset-1 app-btn" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={() => { setPopupCode(UPDATE_RECORD_POPUP_CODE) }}>
-                            <FloppyDisk size={25} weight="fill" /> Save
+                        <div className="col-7 row g-0 justify-content-end">
+                            <div className="col-2 align-self-center btn btn-outline-danger" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={() => { setPopupCode(RESET_FORM_POPUP_CODE) }}>
+                                <ArrowClockwise size={25} /> Reset
+                            </div>
+                            {
+                                isUpdate ? (
+                                    <div className="offset-1 col-2 btn btn-danger" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={() => { setPopupCode(DELETE_SUPPLIER_POPUP_CODE) }}>
+                                        <Trash size={25} weight="fill" /> Delete
+                                    </div>
+                                ) : null
+                            }
+                            <div className="col-2 offset-1 btn btn-primary" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={() => { setPopupCode(UPDATE_RECORD_POPUP_CODE) }}>
+                                <FloppyDisk size={25} weight="fill" /> Save
+                            </div>
                         </div>
                     </div>
                 </div>
