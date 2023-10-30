@@ -16,6 +16,9 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import ProductHome from './pages/Product/Home';
 import SupplierHome from './pages/Supplier/Home';
 import ReportsPage from './pages/Reports';
+import SaleReport from './pages/Reports/SaleReport';
+import PurchaseReport from './pages/Reports/Purchase/PurchaseReport';
+import DayBook from './pages/Reports/DayBook/DayBook';
         
 function App() {
   return (
@@ -38,7 +41,10 @@ function App() {
           <Route path='employee/add' element={<EmployeePage isUpdate={false} />} />
           <Route path='employee/update' element={<EmployeePage isUpdate={true} />} />
           <Route path='report' element={<ReportsPage/>} />
-        
+          <Route path='report/sale' element={<SaleReport/>} />
+          <Route path='report/purchase' element={<PurchaseReport/>} />
+          <Route path='report/day-book' element={<DayBook/>} />
+
         </Route>
       </Routes>
     </BrowserRouter>
