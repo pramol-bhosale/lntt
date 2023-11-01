@@ -117,7 +117,7 @@ function AddProduct({ isUpdate }) {
                         </div>
                         <div className="offset-1 col-3">
                             <div className='form-label'>
-                                Minimum Stock
+                                Alert Quantity
                             </div>
                             <input type="number" className="form-control" />
                         </div>
