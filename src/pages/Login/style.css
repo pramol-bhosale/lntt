@@ -1,23 +1,33 @@
-.login-container{
-    background-image: url('../../media/images/login-shop-dark.jpg');
+.login-container {
+    /* background-image: url('../../media/images/login-shop-dark.jpg'); */
     background-repeat: no-repeat;
     background-position: 100%;
     background-size: cover;
 }
-.login-heading{
+
+.login-heading {
     text-align: center;
     font-weight: bolder;
     font-size: 2rem;
-    border-bottom: 4px solid #1ebcec;
+    border-bottom: 4px solid #01566a;
 }
-.login-child-container{
+
+.login-child-container {
     background-color: white;
     /* opacity: 0.8; */
 }
-.login-btn{
+
+.login-btn {
     border: none;
-    background-color: #1ebcec;
+    background-color: #01566a;
     color: white;
     font-size: 1.3rem;
     font-weight: 700;
+}
+
+.login-image-container img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    max-height: 100vh;
 }

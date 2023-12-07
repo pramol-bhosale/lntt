@@ -35,3 +35,9 @@ export const UPDATE_RECORD_POPUP_CODE = "POPUP003";
 export const ACCESS_CONTROL_POPUP_CODE = "POPUP004";
 export const TABLE_LAYOUT_POPUP_CODE = "POPUP005";
 
+// react reducer constants
+
+export const LOGIN_REQUEST = "LOGIN_REQUEST";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGIN_FAILURE = "LOGIN_FAILURE";
+export const LOGIN_ERROR = "LOGIN_ERROR";

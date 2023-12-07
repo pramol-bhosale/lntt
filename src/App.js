@@ -30,6 +30,7 @@ function App() {
           <Route path='forgot-password' element={<ForgotPassword/>} />
           <Route path='setting' element={<SettingPage/>} />
           <Route path='product' element={<ProductHome/>} />
+          <Route index element={<ProductHome/>} />
           <Route path='product/add' element={<ProductPage isUpdate={false} />} />
           <Route path='product/update' element={<ProductPage isUpdate={true} />} />
           <Route path='product/stock' element={<StockPage />} />
@@ -44,7 +45,6 @@ function App() {
           <Route path='report/sale' element={<SaleReport/>} />
           <Route path='report/purchase' element={<PurchaseReport/>} />
           <Route path='report/day-book' element={<DayBook/>} />
-
         </Route>
       </Routes>
     </BrowserRouter>

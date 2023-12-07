@@ -9,7 +9,8 @@ function SideBarMenu({ data }) {
     const [pathName, setPathName] = useState("/")
     useEffect(() => {
         setPathName(window.location.pathname.split("/")[1])
-    }, [])
+        setIsOpen(pathName === data.path)
+    }, [window.location])
     return (
         <div className="row g-0 mx-1 my-2">
             <button type="button" className={`rounded-3 col-12 sidebar-tab ${pathName === data.path ? 'sidebar-active' : ''}`} onClick={() => { setIsOpen(prev => !prev) }}>

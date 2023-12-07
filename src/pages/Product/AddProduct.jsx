@@ -66,13 +66,13 @@ function AddProduct({ isUpdate }) {
                             <div className='form-label'>
                                 Purchase Rate*
                             </div>
-                            <input type="number" className="form-control" />
+                            <input type="number" className="form-control" min={0} />
                         </div>
                         <div className="offset-1 col-3">
                             <div className='form-label'>
                                 M.R.P
                             </div>
-                            <input type="number" className="form-control" />
+                            <input type="number" className="form-control" min={0} />
                         </div>
                     </div>
                     <div className="col-12 row g-0 mt-4 align-items-baseline">
@@ -80,13 +80,13 @@ function AddProduct({ isUpdate }) {
                             <div className='form-label'>
                                 Margin %
                             </div>
-                            <input type="number" className="form-control" />
+                            <input type="number" className="form-control" min={0} />
                         </div>
                         <div className="offset-1 col-3">
                             <div className='form-label'>
                                 Sale Rate*
                             </div>
-                            <input type="number" className="form-control" />
+                            <input type="number" className="form-control" min={0} />
                         </div>
                         <div className="offset-1 col-3">
                             <fieldset class="border p-2 rounded-2 px-3 pb-3">
@@ -96,13 +96,13 @@ function AddProduct({ isUpdate }) {
                                         <div className='form-label'>
                                             Margin %
                                         </div>
-                                        <input type="number" className="form-control" />
+                                        <input type="number" className="form-control" min={0}/>
                                     </div>
                                     <div className="offset-1 col-5">
                                         <div className='form-label'>
                                             Rate
                                         </div>
-                                        <input type="number" className="form-control" />
+                                        <input type="number" className="form-control" min={0}/>
                                     </div>
                                 </div>
                             </fieldset>
@@ -119,7 +119,7 @@ function AddProduct({ isUpdate }) {
                             <div className='form-label'>
                                 Alert Quantity
                             </div>
-                            <input type="number" className="form-control" />
+                            <input type="number" className="form-control" min={0}/>
                         </div>
                         <div className="offset-1 col-3">
                             <div className='form-label'>
@@ -146,6 +146,12 @@ function AddProduct({ isUpdate }) {
                                 options={GSTextraList}
                                 menuPlacement='top'
                             />
+                        </div>
+                        <div className="offset-1 col-3">
+                            <div className="form-label">
+                                Upload Image
+                            </div>
+                            <input type="file" name="" id="" />
                         </div>
                     </div>
                     <div className="col-12 row g-0 mt-5 justify-content-end">
