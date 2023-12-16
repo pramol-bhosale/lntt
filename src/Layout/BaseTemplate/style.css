@@ -15,20 +15,21 @@ body.dark {
     cursor: pointer;
     border: none;
     padding: 15px 10px;
-    background-color: #fff;
+    background-color: #28354B;
+    font-size: 18px;
  }
 .sidebar-container{
   border-right: 1px solid #CCCEFD;
-  background-color:#fff;
+  background-color: #192841;
   position: fixed;
   overflow-y: scroll;
 }
 .sidebar-tab:hover{
-   background-color: #695cfe;
+   background-color: #475A7F;
     color: #fff;
 }
 .sidebar-active, .sidebar-active:hover{
-   background-color: #695cfe;
+   background-color: #475A7F;
    color: #fff;
 }
 .sidebar-active .sidebar-tab-link{
@@ -59,20 +60,24 @@ body.dark {
 .sidebar-links{
     cursor: pointer;
     text-decoration: none;
-    color: #121214;
-}
-.sidebar-links:hover{
- font-weight: bold;
+    color: #fff;
+    font-size: 18px;
 }
 .sidebar-link-container{
     cursor: pointer;
+    color: white;
 }
 .sidebar-link-container:hover{
-    background-color: #ececec;
+    background-color: #475A7F;
+    color: white;
 }
 .basetemplate-children-footer{
     box-shadow: 0 0 4px rgba(15,34,58,.12);
 }
 ::-webkit-scrollbar {
     width: 2px;
+  }
+ 
+  .sidebar-heading{
+    color: white;
   }

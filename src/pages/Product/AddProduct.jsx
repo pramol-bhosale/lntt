@@ -17,6 +17,27 @@ function AddProduct({ isUpdate }) {
     ]
     const [mainLabel, setMainLabel] = useState(isUpdate);
     const [popupCode, setPopupCode] = useState(RESET_FORM_POPUP_CODE)
+    const [data, setData] = useState({
+        name: "T-Shirt",
+        unit: "",
+        HSN: "",
+        rate: "",
+        mrp: "",
+        margin: "",
+        saleRate: "",
+        wholeSale: {
+            margin: "",
+            rate: ""
+        },
+        stock: "",
+        alertQuantity: "",
+        discount: "",
+        gst: {
+            value: "",
+            included: false
+        },
+        images: []
+    })
     useEffect(() => {
         setMainLabel(isUpdate)
     }, [isUpdate])
@@ -26,151 +47,151 @@ function AddProduct({ isUpdate }) {
             <div className="row g-0">
                 <div className="col-12 align-items-center">
                     <div className="col-12 row g-0 justify-content-between">
-                    <div className="col-6">
-                    <Cube size={30} weight="fill" /> <span className='addproduct-main-heading'>
-                        {
-                            mainLabel ? 'Update Product' : 'Add Product'
-                        }
+                        <div className="col-6">
+                            <Cube size={30} weight="fill" /> <span className='addproduct-main-heading'>
+                                {
+                                    mainLabel ? 'Update Product' : 'Add Product'
+                                }
 
-                    </span>
-                    </div>
-                    <div className="col-2 text-end">
-                        {window.location.pathname}
-                    </div>
+                            </span>
+                        </div>
+                        <div className="col-2 text-end">
+                            {window.location.pathname}
+                        </div>
                     </div>
                     <div className="col-12 row g-0 bg-white p-4 my-4 rounded-2 portal-shadow-container">
-                    <div className="col-12 row g-0 mt-4">
-                        <div className="col-3">
-                            <div className='form-label'>
-                                Product Name*
-                            </div>
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div className="offset-1 col-3">
-                            <div className='form-label'>
-                                Unit
-                            </div>
-                            <Select
-                                options={ProductUnitList}
-                            />
-                        </div>
-                        <div className="offset-1 col-3">
-                            <div className='form-label'>
-                                HSN
-                            </div>
-                            <input type="text" className="form-control" />
-                        </div>
-                    </div>
-                    <div className="col-12 row g-0 mt-4">
-                        <div className="col-3">
-                            <div className='form-label'>
-                                Purchase Rate*
-                            </div>
-                            <input type="number" className="form-control" min={0} />
-                        </div>
-                        <div className="offset-1 col-3">
-                            <div className='form-label'>
-                                M.R.P
-                            </div>
-                            <input type="number" className="form-control" min={0} />
-                        </div>
-                    </div>
-                    <div className="col-12 row g-0 mt-4 align-items-baseline">
-                        <div className="col-3">
-                            <div className='form-label'>
-                                Margin %
-                            </div>
-                            <input type="number" className="form-control" min={0} />
-                        </div>
-                        <div className="offset-1 col-3">
-                            <div className='form-label'>
-                                Sale Rate*
-                            </div>
-                            <input type="number" className="form-control" min={0} />
-                        </div>
-                        <div className="offset-1 col-3">
-                            <fieldset class="border p-2 rounded-2 px-3 pb-3">
-                                <legend class="float-none w-auto p-2 addproduct-legend">Wholesale</legend>
-                                <div className="row g-0">
-                                    <div className="col-5">
-                                        <div className='form-label'>
-                                            Margin %
-                                        </div>
-                                        <input type="number" className="form-control" min={0}/>
-                                    </div>
-                                    <div className="offset-1 col-5">
-                                        <div className='form-label'>
-                                            Rate
-                                        </div>
-                                        <input type="number" className="form-control" min={0}/>
-                                    </div>
+                        <div className="col-12 row g-0 mt-4">
+                            <div className="col-3">
+                                <div className='form-label'>
+                                    Product Name*
                                 </div>
-                            </fieldset>
-                        </div>
-                    </div>
-                    <div className="col-12 row g-0 mt-4">
-                        <div className="col-3">
-                            <div className='form-label'>
-                                Stock
+                                <input type="text" className="form-control" />
                             </div>
-                            <input type="text" className="form-control" />
-                        </div>
-                        <div className="offset-1 col-3">
-                            <div className='form-label'>
-                                Alert Quantity
+                            <div className="offset-1 col-3">
+                                <div className='form-label'>
+                                    Unit
+                                </div>
+                                <Select
+                                    options={ProductUnitList}
+                                />
                             </div>
-                            <input type="number" className="form-control" min={0}/>
-                        </div>
-                        <div className="offset-1 col-3">
-                            <div className='form-label'>
-                                Discount %
+                            <div className="offset-1 col-3">
+                                <div className='form-label'>
+                                    HSN
+                                </div>
+                                <input type="text" className="form-control" />
                             </div>
-                            <input type="text" className="form-control" />
                         </div>
-                    </div>
-                    <div className="col-12 row g-0 mt-4">
-                        <div className="col-3">
-                            <div className='form-label'>
-                                Select GST
+                        <div className="col-12 row g-0 mt-4">
+                            <div className="col-3">
+                                <div className='form-label'>
+                                    Purchase Rate*
+                                </div>
+                                <input type="number" className="form-control" min={0} />
                             </div>
-                            <Select
-                                options={GSTList}
-                                menuPlacement='top'
-                            />
+                            <div className="offset-1 col-3">
+                                <div className='form-label'>
+                                    M.R.P
+                                </div>
+                                <input type="number" className="form-control" min={0} />
+                            </div>
                         </div>
-                        <div className="offset-1 col-3">
-                            <div className="form-label">
-                                Is GST included in Rate ?
+                        <div className="col-12 row g-0 mt-4 align-items-baseline">
+                            <div className="col-3">
+                                <div className='form-label'>
+                                    Margin %
+                                </div>
+                                <input type="number" className="form-control" min={0} />
                             </div>
-                            <Select
-                                options={GSTextraList}
-                                menuPlacement='top'
-                            />
-                        </div>
-                        <div className="offset-1 col-3">
-                            <div className="form-label">
-                                Upload Image
+                            <div className="offset-1 col-3">
+                                <div className='form-label'>
+                                    Sale Rate*
+                                </div>
+                                <input type="number" className="form-control" min={0} />
                             </div>
-                            <input type="file" name="" id="" />
-                        </div>
-                    </div>
-                    <div className="col-12 row g-0 mt-5 justify-content-end">
-                        <div className="col-7 row g-0 justify-content-end">
-                            <div className="col-2 align-self-center btn btn-outline-danger" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={() => { setPopupCode(RESET_FORM_POPUP_CODE) }}>
-                                <ArrowClockwise size={25} /> Reset
-                            </div>
-                            {
-                                isUpdate ? (
-                                    <div className="offset-1 col-2 btn btn-danger" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={() => { setPopupCode(DELETE_SUPPLIER_POPUP_CODE) }}>
-                                        <Trash size={25} weight="fill" /> Delete
+                            <div className="offset-1 col-3">
+                                <fieldset class="border p-2 rounded-2 px-3 pb-3">
+                                    <legend class="float-none w-auto p-2 addproduct-legend">Wholesale</legend>
+                                    <div className="row g-0">
+                                        <div className="col-5">
+                                            <div className='form-label'>
+                                                Margin %
+                                            </div>
+                                            <input type="number" className="form-control" min={0} />
+                                        </div>
+                                        <div className="offset-1 col-5">
+                                            <div className='form-label'>
+                                                Rate
+                                            </div>
+                                            <input type="number" className="form-control" min={0} />
+                                        </div>
                                     </div>
-                                ) : null
-                            }
-                            <div className="col-2 offset-1 btn btn-primary" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={() => { setPopupCode(UPDATE_RECORD_POPUP_CODE) }}>
-                                <FloppyDisk size={25} weight="fill" /> Save
+                                </fieldset>
                             </div>
                         </div>
-                    </div>
+                        <div className="col-12 row g-0 mt-4">
+                            <div className="col-3">
+                                <div className='form-label'>
+                                    Stock
+                                </div>
+                                <input type="text" className="form-control" />
+                            </div>
+                            <div className="offset-1 col-3">
+                                <div className='form-label'>
+                                    Alert Quantity
+                                </div>
+                                <input type="number" className="form-control" min={0} />
+                            </div>
+                            <div className="offset-1 col-3">
+                                <div className='form-label'>
+                                    Discount %
+                                </div>
+                                <input type="text" className="form-control" />
+                            </div>
+                        </div>
+                        <div className="col-12 row g-0 mt-4">
+                            <div className="col-3">
+                                <div className='form-label'>
+                                    Select GST
+                                </div>
+                                <Select
+                                    options={GSTList}
+                                    menuPlacement='top'
+                                />
+                            </div>
+                            <div className="offset-1 col-3">
+                                <div className="form-label">
+                                    Is GST included in Rate ?
+                                </div>
+                                <Select
+                                    options={GSTextraList}
+                                    menuPlacement='top'
+                                />
+                            </div>
+                            <div className="offset-1 col-3">
+                                <div className="form-label">
+                                    Upload Image
+                                </div>
+                                <input type="file" name="" id="" />
+                            </div>
+                        </div>
+                        <div className="col-12 row g-0 mt-5 justify-content-end">
+                            <div className="col-7 row g-0 justify-content-end">
+                                <div className="col-2 align-self-center btn btn-outline-danger" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={() => { setPopupCode(RESET_FORM_POPUP_CODE) }}>
+                                    <ArrowClockwise size={25} /> Reset
+                                </div>
+                                {
+                                    isUpdate ? (
+                                        <div className="offset-1 col-2 btn btn-danger" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={() => { setPopupCode(DELETE_SUPPLIER_POPUP_CODE) }}>
+                                            <Trash size={25} weight="fill" /> Delete
+                                        </div>
+                                    ) : null
+                                }
+                                <div className="col-2 offset-1 btn btn-primary" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={() => { setPopupCode(UPDATE_RECORD_POPUP_CODE) }}>
+                                    <FloppyDisk size={25} weight="fill" /> Save
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -6,6 +6,10 @@ import { Loader } from '../../components/Loader';
 function ForgotPassword() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false)
+  const [errors, setErrors] = useState({
+    email:"PLease enter valid email",
+    response:"extra msg that comes from backend"
+  })
   const handleSend = () => {
     setLoading(true)
     // navigate("/product/add")
@@ -25,8 +29,15 @@ function ForgotPassword() {
               An email with instructions to reset your password will be send to your email
             </div>
             <div className="col-8 form-floating mt-4">
-              <input type="email" className="form-control" id="login-email" placeholder='email' />
+              <input type="email" className={`form-control ${errors.email ? 'error-login-border' : null}`} id="login-email" placeholder='email' />
               <label htmlFor="login-email">Email</label>
+              {
+                errors.email ? (
+                  <div className='error-msg-container'>
+                    {errors.email}
+                  </div>
+                ) : null
+              }
             </div>
           </div>
           <div className="col-12 row g-0 justify-content-center mt-4 mb-4">

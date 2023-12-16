@@ -12,8 +12,8 @@ function SideBarMenu({ data }) {
         setIsOpen(pathName === data.path)
     }, [window.location])
     return (
-        <div className="row g-0 mx-1 my-2">
-            <button type="button" className={`rounded-3 col-12 sidebar-tab ${pathName === data.path ? 'sidebar-active' : ''}`} onClick={() => { setIsOpen(prev => !prev) }}>
+        <div className="row g-0 my-2">
+            <button type="button" className={` col-12 sidebar-tab ${pathName === data.path ? 'sidebar-active' : ''}`} onClick={() => { setIsOpen(prev => !prev) }}>
                 <div className="row g-0 justify-content-between align-items-center px-2" >
                     <div className="col-1">
                         {data.icon}

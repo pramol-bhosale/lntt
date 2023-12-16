@@ -31,3 +31,10 @@
     object-position: center;
     max-height: 100vh;
 }
+.error-login-border{
+    border: 3px solid #dc3545;
+}
+.error-msg-container{
+  margin-top: 5px;
+  color: #dc3545;   
+}

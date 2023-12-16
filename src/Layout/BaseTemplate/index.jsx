@@ -15,7 +15,7 @@ function BaseTemplate({children}) {
              {children}
             </div>
              <div className="col-12 row g-0 p-2 py-3 mt-5 basetemplate-children-footer">
-             2023 © Master.
+             2023 © All Rights are Reserved Master.
              </div>
         </div>
     </div>

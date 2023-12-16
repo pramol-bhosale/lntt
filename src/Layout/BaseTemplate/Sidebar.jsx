@@ -18,7 +18,7 @@ function Sidebar() {
             <div className='row g-0'>
                 <div>
                     <div className="row g-0 py-3">
-                        <div className="col-10 text-center py-3">
+                        <div className="col-10 text-center py-3 sidebar-heading">
                             <Cube size={22} weight="fill" /> Master
                         </div>
                         <div className="mt-4">
