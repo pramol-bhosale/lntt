@@ -25,7 +25,7 @@ function Sidebar() {
                         {
                             sideBarLinks.map(element => {
                                 return (
-                                    <SideBarMenu data={element} />
+                                    <SideBarMenu data={element} key={element.path} />
                                 )
                             })
                         }

@@ -19,6 +19,8 @@ import ReportsPage from './pages/Reports';
 import SaleReport from './pages/Reports/SaleReport';
 import PurchaseReport from './pages/Reports/Purchase/PurchaseReport';
 import DayBook from './pages/Reports/DayBook/DayBook';
+import SupplierList from './pages/Supplier/SupplierList';
+import Dashboard from './pages/DashBoard';
 
 function App() {
   return (
@@ -30,13 +32,14 @@ function App() {
           <Route path='forgot-password' element={<ForgotPassword />} />
           <Route path='setting' element={<SettingPage />} />
           <Route path='product' element={<ProductHome />} />
-          <Route index element={<ProductHome />} />
+          <Route index element={<Dashboard />} />
           <Route path='product/add' element={<ProductPage isUpdate={false} />} />
           <Route path='product/update' element={<ProductPage isUpdate={true} />} />
           <Route path='product/stock' element={<StockPage />} />
           <Route path='supplier' element={<SupplierHome />} />
           <Route path='supplier/add' element={<SupplierPage isUpdate={false} />} />
           <Route path='supplier/update' element={<SupplierPage isUpdate={true} />} />
+          <Route path='supplier/list' element={<SupplierList/>}/>
           <Route path='customer/add' element={<CustomerPage isUpdate={false} />} />
           <Route path='customer/update' element={<CustomerPage isUpdate={true} />} />
           <Route path='employee/add' element={<EmployeePage isUpdate={false} />} />
