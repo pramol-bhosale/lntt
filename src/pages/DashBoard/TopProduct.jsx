@@ -34,7 +34,7 @@ const ProductItem = ({data}) =>{
                         {data.name}
                      </div>
                      <div>
-                        Quantity - {data.quantity}
+                        {data.quantity} PCS
                      </div>
                     </div>
                     <div className="col-4">
