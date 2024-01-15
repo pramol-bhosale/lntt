@@ -48,7 +48,7 @@
     color: #0B803A;
 }
 
-.miniWidget-container,.stock-value-container, .low-stock-container,.TP_parent-container,.dashboard_chart-container {
+.miniWidget-container,.stock-value-container, .low-stock-container,.TP_parent-container,.dashboard_chart-container,.d_recent-transaction-container {
     background-color: white;
     box-shadow: 2px 2px 10px -1px rgba(110, 115, 126, 0.75);
     -webkit-box-shadow: 2px 2px 5px -1px rgba(110, 115, 126, 0.75);
@@ -87,4 +87,10 @@
    min-height: 400px;
    background-color: white;
    
+  }
+  .d_recent-transaction-container{
+  }
+  .d_recent-transaction-header{
+    font-size: 20px;
+    font-weight: bold;
   }

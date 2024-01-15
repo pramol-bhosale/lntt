@@ -117,68 +117,68 @@ function StockPage() {
                             <div className="card-body">
                                 <div className="col-12 row g-0 justify-content-between">
                                     <div className="col-6 row g-0 align-items-center">
-                                           <div className="col-1">
-                                             Show
-                                           </div>
-                                           <div className="col-2">
-                                            <Select options={EntryiCountList} defaultValue={EntryiCountList[0]}/>
-                                           </div>
-                                           <div className="col-2 text-center">
+                                        <div className="col-1">
+                                            Show
+                                        </div>
+                                        <div className="col-2">
+                                            <Select options={EntryiCountList} defaultValue={EntryiCountList[0]} />
+                                        </div>
+                                        <div className="col-2 text-center">
                                             Entries
-                                           </div>
+                                        </div>
                                     </div>
                                     <div className="col-4 row g-0 align-items-center">
                                         <div className="col-2">
-                                            Search: 
+                                            Search:
                                         </div>
                                         <div className="col-8">
-                                        <input type="text" className='form-control d-inline' />
+                                            <input type="text" className='form-control d-inline' />
                                         </div>
                                     </div>
                                 </div>
                                 <div className="row g-0 mt-4">
-                                <table className='table stock-table table-bordered table-hover ' id='stockTable'>
-                        <thead>
-                            <tr>
-                                <th>
-                                    Product Name
-                                </th>
-                                <th>
-                                    Stock
-                                </th>
-                                <th>
-                                    Purchase Rate
-                                </th>
-                                <th>
-                                    Sale Rate
-                                </th>
-                                <th>
-                                    Discount
-                                </th>
-                                <th>
-                                    Barcode
-                                </th>
-                                <th>
-                                    HSN
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                productList.map((row)=>{
-                                   return <tr>
-                                    <td>{row.name}</td>
-                                    <td>{row.stock}</td>
-                                    <td>{row.purchaseRate}</td>
-                                    <td>{row.saleRate}</td>
-                                    <td>{row.discount}</td>
-                                    <td>{row.barcode}</td>
-                                    <td>{row.hsn}</td>
-                                   </tr>
-                                })
-                            }
-                        </tbody>
-                    </table>
+                                    <table className='table stock-table table-bordered table-hover ' id='stockTable'>
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Product Name
+                                                </th>
+                                                <th>
+                                                    Stock
+                                                </th>
+                                                <th>
+                                                    Purchase Rate
+                                                </th>
+                                                <th>
+                                                    Sale Rate
+                                                </th>
+                                                <th>
+                                                    Discount
+                                                </th>
+                                                <th>
+                                                    Barcode
+                                                </th>
+                                                <th>
+                                                    HSN
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {
+                                                productList.map((row) => {
+                                                    return <tr>
+                                                        <td>{row.name}</td>
+                                                        <td>{row.stock}</td>
+                                                        <td>{row.purchaseRate}</td>
+                                                        <td>{row.saleRate}</td>
+                                                        <td>{row.discount}</td>
+                                                        <td>{row.barcode}</td>
+                                                        <td>{row.hsn}</td>
+                                                    </tr>
+                                                })
+                                            }
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>

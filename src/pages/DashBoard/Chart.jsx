@@ -44,8 +44,8 @@ function Chart() {
             <YAxis/>
             <Tooltip/>
             <Legend/>
-            <Bar dataKey="sale" fill='#82ca9d'/>
-            <Bar dataKey="purchase" fill='#8884d8'/>
+            <Bar dataKey="sale" fill='#54AD43'/>
+            <Bar dataKey="purchase" fill='#DE8C65'/>
             </BarChart>
         </ResponsiveContainer>
   )

@@ -5,6 +5,7 @@ import SaleMiniWidget from './SaleMiniWidget'
 import PurchaseMiniWidget from './PurchaseMiniWidget'
 import DataAnalysisWidget from './DataAnalysisWidget'
 import Chart from './Chart'
+import RecentTransaction from './RecentTransaction'
 function Dashboard() {
     return (
         <BaseTemplate>
@@ -19,8 +20,11 @@ function Dashboard() {
                             <div className="col-6 p-1"><PurchaseMiniWidget /></div>
                         </div>
                         <div className="col-12 row g-0 mt-4 justify-content-between">
-                            <div className="col-4 p-1 "><SaleMiniWidget /></div>
-                            <div className="col-7 p-3 dashboard_chart-container rounded-3"><Chart /></div>
+                            {/* <div className="col-4 p-1 "><SaleMiniWidget /></div> */}
+                            <div className="col-12 p-3 dashboard_chart-container rounded-3"><Chart /></div>
+                        </div>
+                        <div className="col-12 mt-4">
+                           <RecentTransaction/>
                         </div>
                     </div>
                     <div className="col-3 px-2 row g-0 border-left">
