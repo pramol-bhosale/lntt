@@ -29,7 +29,7 @@ function RecentTransaction() {
             <div className="col-12 mb-3 mt-2">
                 <div className='d_recent-transaction-header'><ClockClockwise size={25} weight="light" /> Recent Transactions</div>
             </div>
-            <CDTable headers={headers} data={data}/>
+            <CDTable headers={headers} data={data} isCollapse={true}/>
         </div>
     )
 }
