@@ -65,7 +65,7 @@ function AddProduct({ isUpdate }) {
                                 <div className='form-label'>
                                     Product Name*
                                 </div>
-                                <input type="text" className="form-control" />
+                                <input type="text" className="form-control" onChange={(e) => { setData(prev => ({ ...prev, name: e.target.value })) }} />
                             </div>
                             <div className="offset-1 col-3">
                                 <div className='form-label'>
@@ -73,13 +73,14 @@ function AddProduct({ isUpdate }) {
                                 </div>
                                 <Select
                                     options={ProductUnitList}
+                                    onChange={(value) => { setData(prev => ({ ...prev, unit: value })) }}
                                 />
                             </div>
                             <div className="offset-1 col-3">
                                 <div className='form-label'>
                                     HSN
                                 </div>
-                                <input type="text" className="form-control" />
+                                <input type="text" className="form-control" onChange={(e) => { setData(prev => ({ ...prev, HSN: e.target.value })) }} />
                             </div>
                         </div>
                         <div className="col-12 row g-0 mt-4">
@@ -87,13 +88,13 @@ function AddProduct({ isUpdate }) {
                                 <div className='form-label'>
                                     Purchase Rate*
                                 </div>
-                                <input type="number" className="form-control" min={0} />
+                                <input type="number" className="form-control" min={0} onChange={(e) => { setData(prev => ({ ...prev, rate: e.target.value })) }} />
                             </div>
                             <div className="offset-1 col-3">
                                 <div className='form-label'>
                                     M.R.P
                                 </div>
-                                <input type="number" className="form-control" min={0} />
+                                <input type="number" className="form-control" min={0} onChange={(e) => { setData(prev => ({ ...prev, mrp: e.target.value })) }} />
                             </div>
                         </div>
                         <div className="col-12 row g-0 mt-4 align-items-baseline">
@@ -101,13 +102,13 @@ function AddProduct({ isUpdate }) {
                                 <div className='form-label'>
                                     Margin %
                                 </div>
-                                <input type="number" className="form-control" min={0} />
+                                <input type="number" className="form-control" min={0} onChange={(e) => { setData(prev => ({ ...prev, margin: e.target.value })) }} />
                             </div>
                             <div className="offset-1 col-3">
                                 <div className='form-label'>
                                     Sale Rate*
                                 </div>
-                                <input type="number" className="form-control" min={0} />
+                                <input type="number" className="form-control" min={0} onChange={(e) => { setData(prev => ({ ...prev, saleRate: e.target.value })) }} />
                             </div>
                             <div className="offset-1 col-3">
                                 <fieldset class="border p-2 rounded-2 px-3 pb-3">
@@ -117,13 +118,13 @@ function AddProduct({ isUpdate }) {
                                             <div className='form-label'>
                                                 Margin %
                                             </div>
-                                            <input type="number" className="form-control" min={0} />
+                                            <input type="number" className="form-control" min={0} onChange={(e) => { setData(prev => ({ ...prev, wholeSale: { ...prev.wholeSale, margin: e.target.value } })) }} />
                                         </div>
                                         <div className="offset-1 col-5">
                                             <div className='form-label'>
                                                 Rate
                                             </div>
-                                            <input type="number" className="form-control" min={0} />
+                                            <input type="number" className="form-control" min={0} onChange={(e) => { setData(prev => ({ ...prev, wholeSale: { ...prev.wholeSale, rate: e.target.value } })) }} />
                                         </div>
                                     </div>
                                 </fieldset>
@@ -134,19 +135,19 @@ function AddProduct({ isUpdate }) {
                                 <div className='form-label'>
                                     Stock
                                 </div>
-                                <input type="text" className="form-control" />
+                                <input type="text" className="form-control" onChange={(e) => { setData(prev => ({ ...prev, stock: e.target.value })) }} />
                             </div>
                             <div className="offset-1 col-3">
                                 <div className='form-label'>
                                     Alert Quantity
                                 </div>
-                                <input type="number" className="form-control" min={0} />
+                                <input type="number" className="form-control" min={0} onChange={(e) => { setData(prev => ({ ...prev, alertQuantity: e.target.value })) }} />
                             </div>
                             <div className="offset-1 col-3">
                                 <div className='form-label'>
                                     Discount %
                                 </div>
-                                <input type="text" className="form-control" />
+                                <input type="text" className="form-control" onChange={(e) => { setData(prev => ({ ...prev, discount: e.target.value })) }} />
                             </div>
                         </div>
                         <div className="col-12 row g-0 mt-4">
@@ -157,6 +158,7 @@ function AddProduct({ isUpdate }) {
                                 <Select
                                     options={GSTList}
                                     menuPlacement='top'
+                                    onChange={(value) => { setData(prev => ({ ...prev, gst: { ...prev.gst, value: value } })) }}
                                 />
                             </div>
                             <div className="offset-1 col-3">
@@ -166,6 +168,7 @@ function AddProduct({ isUpdate }) {
                                 <Select
                                     options={GSTextraList}
                                     menuPlacement='top'
+                                    onChange={(value) => { setData(prev => ({ ...prev, gst: { ...prev.gst, included: value } })) }}
                                 />
                             </div>
                             <div className="offset-1 col-3">
