@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 
 function Chart() {
     const [data, setData] = useState([
@@ -36,7 +36,7 @@ function Chart() {
     ])
   return (
         <ResponsiveContainer width="100%" height="100%">
-            <BarChart
+            <LineChart
             data={data}
             >
             <CartesianGrid strokeDasharray="3 3"/>
@@ -44,9 +44,9 @@ function Chart() {
             <YAxis/>
             <Tooltip/>
             <Legend/>
-            <Bar dataKey="sale" fill='#54AD43'/>
-            <Bar dataKey="purchase" fill='#DE8C65'/>
-            </BarChart>
+            <Line dataKey="sale" stroke='#45496E' type="monotone"/>
+            <Line dataKey="purchase" stroke='#FFA500' type="monotone"/>
+            </LineChart>
         </ResponsiveContainer>
   )
 }
