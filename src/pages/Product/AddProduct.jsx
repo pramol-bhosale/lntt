@@ -2,7 +2,7 @@ import { ArrowClockwise, Cube, FloppyDisk, Trash } from '@phosphor-icons/react'
 import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
 import PopUp from '../../components/Modal'
-import { DELETE_SUPPLIER_POPUP_CODE, RESET_FORM_POPUP_CODE, UPDATE_RECORD_POPUP_CODE } from '../../utils/Constants'
+import { DELETE_SUPPLIER_POPUP_CODE, RESET_FORM_POPUP_CODE, SAVE_RECORD_POPUP_CODE, UPDATE_RECORD_POPUP_CODE } from '../../utils/Constants'
 import { ProductUnitList } from '../../utils/Data'
 import { findPerFromVals, findPercOfValAndVal } from '../../utils/calculations'
 
@@ -120,7 +120,7 @@ function AddProduct({ isUpdate }) {
     }
     return (
         <>
-            <PopUp code={popupCode} />
+            <PopUp code={popupCode} successCallBack={()=>{console.log("adfasd")}}/>
             <div className="row g-0">
                 <div className="col-12 align-items-center">
                     <div className="col-12 row g-0 justify-content-between">
@@ -189,8 +189,8 @@ function AddProduct({ isUpdate }) {
                                 <input type="number" className="form-control" min={0} onChange={(e) => { setData(prev => ({ ...prev, saleRate: e.target.value })); cal(e.target.value, undefined, undefined, 2); }} value={data?.saleRate} />
                             </div>
                             <div className="offset-1 col-3">
-                                <fieldset class="border p-2 rounded-2 px-3 pb-3">
-                                    <legend class="float-none w-auto p-2 addproduct-legend">Wholesale</legend>
+                                <fieldset className="border p-2 rounded-2 px-3 pb-3">
+                                    <legend className="float-none w-auto p-2 addproduct-legend">Wholesale</legend>
                                     <div className="row g-0">
                                         <div className="col-5">
                                             <div className='form-label'>
@@ -213,7 +213,7 @@ function AddProduct({ isUpdate }) {
                                 <div className='form-label'>
                                     Stock
                                 </div>
-                                <input type="text" className="form-control" onChange={(e) => { setData(prev => ({ ...prev, stock: e.target.value })) }} value={data?.stock} />
+                                <input type="number" className="form-control" onChange={(e) => { setData(prev => ({ ...prev, stock: e.target.value })) }} value={data?.stock} />
                             </div>
                             <div className="offset-1 col-3">
                                 <div className='form-label'>
@@ -225,7 +225,7 @@ function AddProduct({ isUpdate }) {
                                 <div className='form-label'>
                                     Discount %
                                 </div>
-                                <input type="text" className="form-control" onChange={(e) => { setData(prev => ({ ...prev, discount: e.target.value })) }} value={data?.discount} />
+                                <input type="number" className="form-control" onChange={(e) => { setData(prev => ({ ...prev, discount: e.target.value })) }} value={data?.discount} />
                             </div>
                         </div>
                         <div className="col-12 row g-0 mt-4">
@@ -274,7 +274,7 @@ function AddProduct({ isUpdate }) {
                                         </div>
                                     ) : null
                                 }
-                                <div className="col-2 offset-1 btn btn-primary" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={() => { setPopupCode(UPDATE_RECORD_POPUP_CODE); console.log(data) }}>
+                                <div className="col-2 offset-1 btn btn-primary" data-bs-toggle={`${popupCode ? 'modal' : ''}`} data-bs-target="#confirmModal" onClick={() => { setPopupCode(isUpdate ? UPDATE_RECORD_POPUP_CODE : SAVE_RECORD_POPUP_CODE); console.log(data) }}>
                                     <FloppyDisk size={25} weight="fill" /> Save
                                 </div>
                             </div>

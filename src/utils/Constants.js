@@ -34,6 +34,7 @@ export const RESET_FORM_POPUP_CODE = "POPUP002";
 export const UPDATE_RECORD_POPUP_CODE = "POPUP003";
 export const ACCESS_CONTROL_POPUP_CODE = "POPUP004";
 export const TABLE_LAYOUT_POPUP_CODE = "POPUP005";
+export const SAVE_RECORD_POPUP_CODE = "POPUP006";
 
 // react reducer constants
 
