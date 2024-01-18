@@ -98,18 +98,6 @@ function AddProduct({ isUpdate }) {
     useEffect(() => {
         setData(initialLoadData)
     }, [initialLoadData]);
-    const calulateSaleRateFromMargin = (val, percentage) => {
-        if (val) {
-            let calRate = findPercOfValAndVal(val, percentage);
-            setData(prev => ({ ...prev, saleRate: calRate }));
-        }
-    }
-    const calculateMarginFromSaleRate = (saleRate) => {
-        if (data.rate) {
-            let calMargin = findPerFromVals(data.rate, saleRate);
-            setData(prev => ({ ...prev, margin: calMargin }))
-        }
-    }
     const cal = (sale = data.sale, purchase = data.rate, margin = data.margin, flag) => {
         switch (flag) {
             case 1:
@@ -121,8 +109,12 @@ function AddProduct({ isUpdate }) {
                 setData(prev => ({ ...prev, margin: calMargin }))
                 return;
             case 3:
-                let calPRate = findPercOfValAndVal(purchase, margin * -1);
-                setData(prev => ({ ...prev, rate: calPRate }))
+                let wRate = findPercOfValAndVal(purchase, margin);
+                setData(prev => ({ ...prev, wholeSale: { ...prev.wholeSale, rate: wRate } }));
+                return;
+            case 4:
+                let wMargin = findPerFromVals(purchase, sale);
+                setData(prev => ({ ...prev, wholeSale: { ...prev.wholeSale, margin: wMargin } }));
                 return;
         }
     }
@@ -174,7 +166,7 @@ function AddProduct({ isUpdate }) {
                                 <div className='form-label'>
                                     Purchase Rate*
                                 </div>
-                                <input type="number" className="form-control"  onChange={(e) => { setData(prev => ({ ...prev, rate: e.target.value })); }} value={data?.rate} />
+                                <input type="number" className="form-control" onChange={(e) => { setData(prev => ({ ...prev, rate: e.target.value })); cal(undefined, e.target.value, undefined, 1); }} value={data?.rate} />
                             </div>
                             <div className="offset-1 col-3">
                                 <div className='form-label'>
@@ -188,13 +180,13 @@ function AddProduct({ isUpdate }) {
                                 <div className='form-label'>
                                     Margin %
                                 </div>
-                                <input type="number" className="form-control" onChange={(e) => { setData(prev => ({ ...prev, margin: e.target.value })); cal(undefined,undefined, e.target.value,1); }} value={data?.margin} />
+                                <input type="number" className="form-control" onChange={(e) => { setData(prev => ({ ...prev, margin: e.target.value })); cal(undefined, undefined, e.target.value, 1); }} value={data?.margin} />
                             </div>
                             <div className="offset-1 col-3">
                                 <div className='form-label'>
                                     Sale Rate*
                                 </div>
-                                <input type="number" className="form-control" min={0} onChange={(e) => { setData(prev => ({ ...prev, saleRate: e.target.value })); cal(e.target.value,undefined,undefined,3);  }} value={data?.saleRate} />
+                                <input type="number" className="form-control" min={0} onChange={(e) => { setData(prev => ({ ...prev, saleRate: e.target.value })); cal(e.target.value, undefined, undefined, 2); }} value={data?.saleRate} />
                             </div>
                             <div className="offset-1 col-3">
                                 <fieldset class="border p-2 rounded-2 px-3 pb-3">
@@ -204,13 +196,13 @@ function AddProduct({ isUpdate }) {
                                             <div className='form-label'>
                                                 Margin %
                                             </div>
-                                            <input type="number" className="form-control" min={0} onChange={(e) => { setData(prev => ({ ...prev, wholeSale: { ...prev.wholeSale, margin: e.target.value } })) }} value={data?.wholeSale.margin} />
+                                            <input type="number" className="form-control" min={0} onChange={(e) => { setData(prev => ({ ...prev, wholeSale: { ...prev.wholeSale, margin: e.target.value } })); cal(undefined, undefined, e.target.value, 3); }} value={data?.wholeSale.margin} />
                                         </div>
                                         <div className="offset-1 col-5">
                                             <div className='form-label'>
                                                 Rate
                                             </div>
-                                            <input type="number" className="form-control" min={0} onChange={(e) => { setData(prev => ({ ...prev, wholeSale: { ...prev.wholeSale, rate: e.target.value } })) }} value={data?.wholeSale.rate} />
+                                            <input type="number" className="form-control" min={0} onChange={(e) => { setData(prev => ({ ...prev, wholeSale: { ...prev.wholeSale, rate: e.target.value } })); cal(e.target.value, undefined, undefined, 4); }} value={data?.wholeSale.rate} />
                                         </div>
                                     </div>
                                 </fieldset>
