@@ -1,34 +1,29 @@
 import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from "../../utils/Constants"
 
-const Request = (data) => {
+export const loginRequest = (data) => {
     return {
-        action: LOGIN_REQUEST,
+        type: LOGIN_REQUEST,
         payload: {
             ...data
         }
     }
 }
 
-const Success = (data) => {
+export const loginSuccess = (data) => {
     return {
-        action: LOGIN_SUCCESS,
+        type: LOGIN_SUCCESS,
         payload: {
             ...data
         }
     }
 }
 
-const Failure = (data) => {
+export const loginFailure = (data) => {
     return {
-        action: LOGIN_FAILURE,
+        type: LOGIN_FAILURE,
         payload: {
             ...data
         }
     }
 }
 
-export {
-    Request,
-    Success,
-    Failure
-};

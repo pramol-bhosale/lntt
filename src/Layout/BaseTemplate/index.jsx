@@ -14,8 +14,8 @@ function BaseTemplate({children}) {
             <div className="col-12 basetemplate-children-container p-3 pt-5 mt-5">
              {children}
             </div>
-             <div className="col-12 row g-0 p-2 py-3 mt-5 basetemplate-children-footer">
-             2023 © All Rights are Reserved Master.
+             <div className="col-12 row g-0 p-2 py-3 mt-5 basetemplate-children-footer justify-content-center">
+             2025 © All Rights are Reserved Accenture.
              </div>
         </div>
     </div>

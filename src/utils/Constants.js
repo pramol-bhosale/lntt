@@ -1,34 +1,3 @@
-export const stateList = [
-    { label: 'Andhra Pradesh', value: 'ap' },
-    { label: 'Arunachal Pradesh', value: 'ar' },
-    { label: 'Assam', value: 'as' },
-    { label: 'Bihar', value: 'br' },
-    { label: 'Chhattisgarh', value: 'cg' },
-    { label: 'Goa', value: 'ga' },
-    { label: 'Gujarat', value: 'gj' },
-    { label: 'Haryana', value: 'hr' },
-    { label: 'Himachal Pradesh', value: 'hp' },
-    { label: 'Jharkhand', value: 'jh' },
-    { label: 'Karnataka', value: 'ka' },
-    { label: 'Kerala', value: 'kl' },
-    { label: 'Madhya Pradesh', value: 'mp' },
-    { label: 'Maharashtra', value: 'mh' },
-    { label: 'Manipur', value: 'mn' },
-    { label: 'Meghalaya', value: 'ml' },
-    { label: 'Mizoram', value: 'mz' },
-    { label: 'Nagaland', value: 'nl' },
-    { label: 'Odisha', value: 'od' },
-    { label: 'Punjab', value: 'pb' },
-    { label: 'Rajasthan', value: 'rj' },
-    { label: 'Sikkim', value: 'sk' },
-    { label: 'Tamil Nadu', value: 'tn' },
-    { label: 'Telangana', value: 'tg' },
-    { label: 'Tripura', value: 'tr' },
-    { label: 'Uttar Pradesh', value: 'up' },
-    { label: 'Uttarakhand', value: 'ut' },
-    { label: 'West Bengal', value: 'wb' }
-]
-
 export const DELETE_SUPPLIER_POPUP_CODE = "POPUP001";
 export const RESET_FORM_POPUP_CODE = "POPUP002";
 export const UPDATE_RECORD_POPUP_CODE = "POPUP003";
@@ -42,3 +11,32 @@ export const LOGIN_REQUEST = "LOGIN_REQUEST";
 export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const LOGIN_FAILURE = "LOGIN_FAILURE";
 export const LOGIN_ERROR = "LOGIN_ERROR";
+
+export const CURRENT_USER_SCHEDULE_REQUEST = "CURRENT_USER_SCHEDULE_REQUEST";
+export const CURRENT_USER_SCHEDULE_SUCCESS = "CURRENT_USER_SCHEDULE_SUCCESS";
+export const CURRENT_USER_SCHEDULE_FAILURE = "CURRENT_USER_SCHEDULE_FAILURE";
+
+export const SCHEDULE_CREATE_REQUEST = "SCHEDULE_CREATE_REQUEST";
+export const SCHEDULE_CREATE_SUCCESS = "SCHEDULE_CREATE_SUCCESS";
+export const SCHEDULE_CREATE_FAILURE = "SCHEDULE_CREATE_FAILURE";
+
+export const SCHEDULE_UPDATE_REQUEST = "SCHEDULE_UPDATE_REQUEST";
+export const SCHEDULE_UPDATE_SUCCESS = "SCHEDULE_UPDATE_SUCCESS";
+export const SCHEDULE_UPDATE_FAILURE = "SCHEDULE_UPDATE_FAILURE";
+
+export const SCHEDULE_DELETE_REQUEST = "SCHEDULE_DELETE_REQUEST";
+export const SCHEDULE_DELETE_SUCCESS = "SCHEDULE_DELETE_SUCCESS";
+export const SCHEDULE_DELETE_FAILURE = "SCHEDULE_DELETE_FAILURE";
+
+export const SME_AVAILABILITY_REQUEST = "SME_AVAILABILITY_REQUEST";
+export const SME_AVAILABILITY_SUCCESS = "SME_AVAILABILITY_SUCCESS";
+export const SME_AVAILABILITY_FAILURE = "SME_AVAILABILITY_FAILURE";
+
+
+export const EXTERNALIZATION_ACTIVITY_REQUEST = "EXTERNALIZATION_ACTIVITY_REQUEST";
+export const EXTERNALIZATION_ACTIVITY_SUCCESS = "EXTERNALIZATION_ACTIVITY_SUCCESS";
+export const EXTERNALIZATION_ACTIVITY_FAILURE = "EXTERNALIZATION_ACTIVITY_FAILURE";
+
+
+export const SCHEDULE_UPDATE_MODAL = "SCHEDULE_UPDATE_MODAL";
+export const SCHEDULE_DELETE_MODAL = "SCHEDULE_DELETE_MODAL"; 

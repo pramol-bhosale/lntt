@@ -1,5 +1,4 @@
-import AccessTable from "../../pages/Employee/AccessTable"
-import TableLayoutPopup from "../../pages/Stock/TableLayoutPopup"
+import TableLayoutPopup from "../../pages/ViewSchedule/TableLayoutPopup"
 import { ACCESS_CONTROL_POPUP_CODE, DELETE_SUPPLIER_POPUP_CODE, RESET_FORM_POPUP_CODE, SAVE_RECORD_POPUP_CODE, TABLE_LAYOUT_POPUP_CODE, UPDATE_RECORD_POPUP_CODE } from "../../utils/Constants"
 
 export const deleteSupplierModal = {
@@ -46,7 +45,7 @@ export const updateData = {
 
 export const accessControlData = {
     header: 'Grant User Access',
-    body: <AccessTable />,
+    body: <>testing</>,
     CTAButtons: {
         name: 'Grant Access',
         classNames: 'btn btn-primary'
