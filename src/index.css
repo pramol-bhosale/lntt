@@ -52,3 +52,8 @@ ul{
 .total-container{
   background-color: #1B7BF9;
 } */
+
+strong{
+  font-weight: bolder;
+  font-size: 17px;
+}

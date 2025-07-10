@@ -34,15 +34,15 @@ function ViewSchedules() {
   const [paginationData, setPaginationData] = useState({ page: 0, size: 10 });
 
   const dispatch = useDispatch();
-  const fetchedData = useSelector(
-    (state) => state.scheduleReducer?.data
-  );
+  const fetchedData = useSelector((state) => state.scheduleReducer?.data);
 
   const isLoading = useSelector((state) => state.scheduleReducer.isLoading);
 
   useEffect(() => {
-    dispatch(scheduleForCurrentUserRequested({ month, ...paginationData }));
-  }, [month, paginationData]);
+    if (!modalData.open) {
+      dispatch(scheduleForCurrentUserRequested({ month, ...paginationData }));
+    }
+  }, [month, paginationData, modalData]);
 
   return (
     <BaseTemplate>
@@ -162,6 +162,7 @@ function ViewSchedules() {
                         count={fetchedData?.data?.totalPages}
                         variant="outlined"
                         shape="rounded"
+                        page={paginationData?.page + 1}
                         onChange={(e, page) => {
                           setPaginationData((prev) => ({
                             ...prev,

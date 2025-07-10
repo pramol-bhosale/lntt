@@ -2,6 +2,7 @@ import {
   CURRENT_USER_SCHEDULE_FAILURE,
   CURRENT_USER_SCHEDULE_REQUEST,
   CURRENT_USER_SCHEDULE_SUCCESS,
+  RESET_SCHEDULED_REDUCER_DATA,
   SCHEDULE_CREATE_FAILURE,
   SCHEDULE_CREATE_REQUEST,
   SCHEDULE_CREATE_SUCCESS,
@@ -29,7 +30,11 @@ export const scheduleReducer = (state = initialState, action) => {
     case SCHEDULE_DELETE_REQUEST:
     case CURRENT_USER_SCHEDULE_REQUEST:
     case SME_AVAILABILITY_REQUEST:
-      return { ...state, isLoading: true };
+      return { ...state, isLoading: true, data: {} };
+
+    case RESET_SCHEDULED_REDUCER_DATA:
+      return { ...initialState };
+
     case SCHEDULE_CREATE_SUCCESS:
     case SCHEDULE_UPDATE_SUCCESS:
     case SCHEDULE_DELETE_SUCCESS:

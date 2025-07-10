@@ -23,12 +23,17 @@ const ScheduleConfirmationModal = ({ type, modalData, setModalData }) => {
   const isLoading = useSelector((state) => state.scheduleReducer.isLoading);
 
   const handleUpdate = () => {
-    console.log(data);
-    dispatch(scheduleUpdateRequested({ ...data }));
+    const response = window.confirm("Are you sure you want to update the changes ?");
+    if (response) {
+      dispatch(scheduleUpdateRequested({ ...data }));
+    }
   };
 
   const handleDelete = () => {
-    dispatch(scheduleDeleteRequested({ ...data }));
+    const response = window.confirm("Are you sure you want to delete the record ?");
+    if (response) {
+      dispatch(scheduleDeleteRequested({ ...data }));
+    }
   };
 
   return (

@@ -1,6 +1,9 @@
 import { Calendar, FloppyDisk, Trash } from "@phosphor-icons/react";
 import React, { useEffect, useState } from "react";
-import { RESET_FORM_POPUP_CODE } from "../../utils/Constants";
+import {
+  RESET_FORM_POPUP_CODE,
+  RESET_SCHEDULED_REDUCER_DATA,
+} from "../../utils/Constants";
 import style from "./style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { scheduleCreateRequested } from "../../state/action/scheduleAction";
@@ -15,22 +18,91 @@ function ScheduleCreatePage() {
 
   const isLoading = useSelector((state) => state.scheduleReducer.isLoading);
   const creationResponse = useSelector((state) => state.scheduleReducer.data);
-  const [openResponse, setOpenResponse] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [acknowledgeMsg, setAcknowledgeMsg] = useState({
+    status: null,
+    msg: <></>,
+  });
 
-  useEffect(()=>{
-    if(creationResponse.status){
-
+  const generateResponse = (data) => {
+    if (data?.fromDate === data?.toDate) {
+      setAcknowledgeMsg({
+        status: true,
+        msg: (
+          <div>
+            <h4>Submission Received</h4>
+            <hr />
+            <p className="my-3">
+              SME Submitted data for <strong>{data?.fromDate}</strong> from{" "}
+              <strong>{data?.fromTime}</strong> to
+              <strong>{data?.toTime}</strong>
+            </p>
+            <div className="text-end">
+              <button
+                className="btn btn-secondary mt-2"
+                onClick={() => {
+                  setData({ ...initialFormData });
+                  setOpen(false);
+                }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        ),
+      });
+    } else {
+      setAcknowledgeMsg({
+        status: true,
+        msg: (
+          <div>
+            <h4>Submission Received</h4>
+            <hr />
+            <p className="my-3">
+              SME Submitted data for <strong>{data?.fromDate}</strong> to{" "}
+              <strong>{data?.toDate}</strong> and timing from{" "}
+              <strong>{data?.fromTime}</strong> to
+              <strong>{data?.toTime}</strong>
+            </p>
+            <div className="text-end">
+              <button
+                className="btn btn-secondary mt-2"
+                onClick={() => {
+                  setData({ ...initialFormData });
+                  setOpen(false);
+                }}
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        ),
+      });
     }
-  },[creationResponse]);
+    setOpen(true);
+  };
 
-  const [data, setData] = useState({
+  useEffect(() => {
+    dispatch({ type: RESET_SCHEDULED_REDUCER_DATA });
+  }, []);
+  useEffect(() => {
+    if (creationResponse?.status) {
+      generateResponse(creationResponse?.data);
+    }else{
+      setOpen(false);
+    }
+  }, [creationResponse]);
+
+  const initialFormData = {
     fromDate: "",
     toDate: "",
     fromTime: "",
     toTime: "",
     activity: "",
     description: "",
-  });
+  };
+
+  const [data, setData] = useState({ ...initialFormData });
 
   useEffect(() => {
     dispatch(externalizationActivityRequested());
@@ -42,6 +114,16 @@ function ScheduleCreatePage() {
 
   return (
     <BaseTemplate>
+      <CustomModal
+        open={open}
+        onClose={() => {
+          setData({ ...initialFormData });
+          setOpen(false);
+        }}
+        classNames={"w-auto"}
+      >
+        {acknowledgeMsg.msg}
+      </CustomModal>
       <div className="row g-0">
         <div className="col-12 align-items-center">
           <Calendar size={32} weight="fill" />{" "}
