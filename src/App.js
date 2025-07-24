@@ -9,6 +9,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import AvailabiltyPage from "./pages/Availability";
 import ScheduleCreatePage from "./pages/Schedules";
 import ViewSchedules from "./pages/Schedules/ViewSchedules";
+import Reports from "./pages/reports";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="schedules/add" element={<ScheduleCreatePage />} />
           <Route path="schedules/view" element={<ViewSchedules />} />
           <Route path="availability" element={<AvailabiltyPage />} />
+          <Route path="report" element={<Reports />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,4 +1,4 @@
-import { Calendar, CalendarPlus, MagnifyingGlass } from "@phosphor-icons/react";
+import { Calendar, CalendarPlus, MagnifyingGlass, TrendUp } from "@phosphor-icons/react";
 
 export const sideBarLinks = [
   {
@@ -16,6 +16,11 @@ export const sideBarLinks = [
     path: "availability",
     icon: <MagnifyingGlass size={30} />,
   },
+  {
+    label: "Reports",
+    path: "report",
+    icon: <TrendUp size={30} />,
+  }
 ];
 
 export const StockTableColumns = [];
